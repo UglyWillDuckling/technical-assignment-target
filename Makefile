@@ -7,13 +7,13 @@ composer-install:
 			--no-ansi
 
 test:
-	docker exec codely-php_ddd_skeleton-backoffice_backend-php ./vendor/bin/phpunit --testsuite backoffice
+	docker exec targetadds_frontend_php ./vendor/bin/phpunit --testsuite backoffice
 
 static-analysis:
-	docker exec codely-php_ddd_skeleton-mooc_backend-php ./vendor/bin/psalm --output-format=github --shepherd
+	docker exec targetadds_frontend_php ./vendor/bin/psalm --output-format=github --shepherd
 
 lint:
-	docker exec codely-php_ddd_skeleton-mooc_backend-php ./vendor/bin/ecs check
+	docker exec targetadds_frontend_php ./vendor/bin/ecs check
 
 start:
 	@if [ ! -f .env.local ]; then echo '' > .env.local; fi
@@ -32,14 +32,12 @@ rebuild:
 	make start
 
 ping-mysql:
-	@docker exec codely-php_ddd_skeleton-mooc-mysql mysqladmin --user=root --password= --host "127.0.0.1" ping --silent
-
-ping-elasticsearch:
-	@curl -I -XHEAD localhost:9200
+	@docker exec targetadds-mysql mysqladmin --user=root --password= --host "127.0.0.1" ping --silent
 
 ping-rabbitmq:
-	@docker exec codely-php_ddd_skeleton-rabbitmq rabbitmqctl ping --silent
+	@docker exec targetadds-rabbitmq rabbitmqctl ping --silent
 
 clean-cache:
 	@rm -rf apps/*/*/var
-	@docker exec codely-php_ddd_skeleton-mooc_backend-php ./apps/mooc/backend/bin/console cache:warmup
+	@docker exec targetadds_frontend_php ./apps/targetadds/front/bin/console cache:warmup
+

@@ -2,18 +2,18 @@ version: '3'
 
 services:
   shared_rabbitmq:
-    container_name: codely-php_ddd_skeleton-rabbitmq
+    container_name: targetadds-rabbitmq
     image: 'rabbitmq:3.10.5-management'
     restart: unless-stopped
     ports:
       - "5630:5672"
       - "8090:15672"
     environment:
-      - RABBITMQ_DEFAULT_USER=codely
-      - RABBITMQ_DEFAULT_PASS=c0d3ly
+      - RABBITMQ_DEFAULT_USER=targetadds
+      - RABBITMQ_DEFAULT_PASS=target
 
   mooc_mysql:
-    container_name: codely-php_ddd_skeleton-mooc-mysql
+    container_name: targetadds-mysql
     image: mariadb:10.7.4
     ports:
       - "3360:3306"
@@ -28,7 +28,7 @@ services:
     command: ["--default-authentication-plugin=mysql_native_password"]
 
   # targetadds_backend_php:
-  #   container_name: codely-php_ddd_skeleton-targetadds_backend-php
+  #   container_name: targetadds_backend_php
   #   user: "${UID}:${GID}"
   #   build:
   #     context: .
@@ -46,7 +46,7 @@ services:
   #   command: symfony serve --dir=apps/targetadds/backend/public --port=8040
 
   targetadds_frontend_php:
-    container_name: codely-php_ddd_skeleton-targetadds_frontend-php
+    container_name: targetadds_frontend_php
     user: "${UID}:${GID}"
     build:
       context: .

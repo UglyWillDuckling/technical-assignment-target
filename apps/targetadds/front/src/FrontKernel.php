@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace CodelyTv\Apps\Backoffice\Frontend;
+namespace Acme\Apps\TargetAdds\Front;
 
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\Config\Loader\LoaderInterface;
@@ -12,7 +12,7 @@ use Symfony\Component\HttpKernel\Kernel;
 
 use function dirname;
 
-class BackofficeFrontendKernel extends Kernel
+class FrontKernel extends Kernel
 {
 	use MicroKernelTrait;
 

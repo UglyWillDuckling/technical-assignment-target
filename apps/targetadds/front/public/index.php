@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use CodelyTv\Apps\Backoffice\Frontend\BackofficeFrontendKernel;
+use Acme\Apps\TargetAdds\Front\FrontKernel;
 use Symfony\Component\ErrorHandler\Debug;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -25,7 +25,7 @@ if ($trustedHosts = $_SERVER['TRUSTED_HOSTS'] ?? $_ENV['TRUSTED_HOSTS'] ?? false
 	Request::setTrustedHosts([$trustedHosts]);
 }
 
-$kernel = new BackofficeFrontendKernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);
+$kernel = new FrontKernel($_SERVER['APP_ENV'], (bool) $_SERVER['APP_DEBUG']);
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
 $response->send();

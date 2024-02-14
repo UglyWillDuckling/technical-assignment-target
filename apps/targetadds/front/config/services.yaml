@@ -1,24 +1,52 @@
-# This file is the entry point to configure your own services.
-# Files in the packages/ subdirectory configure your dependencies.
-
-# Put parameters here that don't need to change on each machine where the app is deployed
-# https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
-parameters:
-
+# imports:
+#     - { resource: ../../../../src/Backoffice/Shared/Infrastructure/Symfony/DependencyInjection/backoffice_services.yaml }
 services:
-    # default configuration for services in *this* file
     _defaults:
-        autowire: true      # Automatically injects dependencies in your services.
-        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+        autoconfigure: true
+        autowire: true
+    #
+    #     # Configure
+    # _instanceof:
+    #     Acme\Shared\Domain\Bus\Event\DomainEventSubscriber:
+    #         tags: ['acme.domain_event_subscriber']
+    #     Acme\Shared\Domain\Bus\Command\CommandHandler:
+    #         tags: ['acme.command_handler']
+    #     Acme\Shared\Domain\Bus\Query\QueryHandler:
+    #         tags: ['acme.query_handler']
+    #     Acme\Apps\TargetAdds\Front\Controller\:
+    #         resource: '../src/Controller'
+    #     tags: ['controller.service_arguments']
+    #
+        # Wire
+    Acme\Shared\:
+        resource: '../../../../src/Shared'
 
-    # makes classes in src/ available to be used as services
-    # this creates a service per class whose id is the fully-qualified class name
-    App\:
-        resource: '../src/'
-        exclude:
-            - '../src/DependencyInjection/'
-            - '../src/Entity/'
-            - '../src/Kernel.php'
+    Acme\TargetAdds\:
+        resource: '../../../../src/TargetAdds'
 
-    # add more service definitions when explicit configuration is needed
-    # please note that last definitions always *replace* previous ones
+    # -- APP DEFINITIONS --
+    # Command/Query Handlers
+    # Acme\Shared\Infrastructure\Bus\Command\InMemorySymfonyCommandBus:
+    #   arguments: [!tagged acme.command_handler]
+    #
+    # Acme\Shared\Infrastructure\Bus\Query\InMemorySymfonyQueryBus:
+    #   arguments: [!tagged acme.query_handler]
+    #
+    # RabbitMQ
+    # CodelyTv\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConnection:
+    #     arguments:
+    #         - host: '%env(RABBITMQ_HOST)%'
+    #     port: '%env(RABBITMQ_PORT)%'
+    #     vhost: '%env(RABBITMQ_MOOC_VHOST)%'
+    #     login: '%env(RABBITMQ_LOGIN)%'
+    #     password: '%env(RABBITMQ_PASSWORD)%'
+    #     read_timeout: 2
+    #     write_timeout: 2
+    #     connect_timeout: 5
+
+    # Acme\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventBus:
+    #   arguments: ['@Acme\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConnection', '%env(RABBITMQ_EXCHANGE)%']
+
+              # -- IMPLEMENTATIONS SELECTOR --
+          # Acme\Shared\Domain\Bus\Event\EventBus: '@acme\Shared\Infrastructure\Bus\Event\WithMonitoring\WithPrometheusMonitoringEventBus'
+          # Acme\Backoffice\Courses\Domain\BackofficeCourseRepository: '@acme\Backoffice\Courses\Infrastructure\Persistence\ElasticsearchBackofficeCourseRepository'

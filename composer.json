@@ -26,14 +26,14 @@
     },
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "Acme\\Apps\\TargetAdds\\Front\\": "apps/targetadds/front/src",
+
+            "Acme\\": ["src"]
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Acme\\Apps\\TargetAdds\\Front\\": "apps/targetadds/front/src",
-
-            "Acme\\": ["src"]
+            "CodelyTv\\Tests\\": ["tests"]
         }
     },
     "replace": {

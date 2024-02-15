@@ -2,17 +2,16 @@
 
 declare(strict_types=1);
 
-use CodelyTv\CodingStyle;
-use PhpCsFixer\Fixer\ClassNotation\FinalClassFixer;
+use PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 
-// TODO: set PSR12 style a
-return function (ECSConfig $ecsConfig): void {
-	$ecsConfig->paths([__DIR__ . '/apps', __DIR__ . '/src', __DIR__ . '/tests', ]);
-
-	$ecsConfig->sets([CodingStyle::DEFAULT]);
-
-	$ecsConfig->skip([
+return ECSConfig::configure()
+	->withPaths([__DIR__ . '/src', __DIR__ . '/tests', __DIR__ . '/apps'])
+	->withRules([
+		ArraySyntaxFixer::class,
+	])
+	->withPreparedSets(psr12: true)
+	->withSkip([
 		__DIR__ . '/apps/targetadds/front/var',
 	]);
-};
+

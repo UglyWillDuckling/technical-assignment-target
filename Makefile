@@ -1,10 +1,11 @@
 current-dir := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
+composer-version := 2.7
 
 composer-install:
 	@docker run --rm $(INTERACTIVE) --volume $(current-dir):/app --user $(id -u):$(id -g) \
-		composer:2.* install \
-			--ignore-platform-reqs \
-			--no-ansi
+		composer:$(composer-version) install \
+		--ignore-platform-reqs \
+		--no-ansi
 
 test:
 	docker exec targetadds_frontend_php ./vendor/bin/phpunit --testsuite backoffice

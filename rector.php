@@ -14,14 +14,9 @@ return static function (RectorConfig $rectorConfig): void {
     ]);
 
     $rectorConfig->sets([
-        LevelSetList::UP_TO_PHP_82,
+        LevelSetList::UP_TO_PHP_83,
         SetList::TYPE_DECLARATION
     ]);
 
-    $rectorConfig->skip([
-        __DIR__ . '/apps/backoffice/backend/var',
-        __DIR__ . '/apps/backoffice/frontend/var',
-        __DIR__ . '/apps/mooc/backend/var',
-        __DIR__ . '/apps/mooc/frontend/var',
-    ]);
+    $rectorConfig->skip([ __DIR__ . '/apps/targetadds/front/var', ]);
 };

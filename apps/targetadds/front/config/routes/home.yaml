@@ -1,0 +1,4 @@
+home_get:
+  path: /home
+  controller: Acme\Apps\TargetAdds\Front\Controller\Home\HomeController
+  methods:  [GET]

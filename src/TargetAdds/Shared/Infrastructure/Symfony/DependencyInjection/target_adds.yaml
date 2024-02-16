@@ -1,7 +1,7 @@
 services:
   # Databases
   Doctrine\ORM\EntityManager:
-    factory: [ Acme\TargetAdds\Infrastructure\Doctrine\TargetAddsEntityManagerFactory, create ]
+    factory: [ Acme\TargetAdds\Shared\Infrastructure\Doctrine\TargetAddsEntityManagerFactory, create ]
     arguments:
       - driver: '%env(TARGETADDS_DATABASE_DRIVER)%'
         host: '%env(TARGETADDS_DATABASE_HOST)%'

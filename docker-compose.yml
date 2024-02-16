@@ -12,11 +12,11 @@ services:
       - RABBITMQ_DEFAULT_USER=targetadds
       - RABBITMQ_DEFAULT_PASS=target
 
-  mooc_mysql:
+  targetadds-mysql:
     container_name: targetadds-mysql
     image: mariadb:10.7.4
     ports:
-      - "3360:3306"
+      - "33006:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
@@ -59,6 +59,6 @@ services:
       - .:/app:delegated
     depends_on:
       - shared_rabbitmq
-      - mooc_mysql
+      - targetadds-mysql
     command: symfony serve --dir=apps/targetadds/front/public --port=8041
 

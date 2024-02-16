@@ -1,22 +1,14 @@
-# imports:
-#     - { resource: ../../../../src/Backoffice/Shared/Infrastructure/Symfony/DependencyInjection/backoffice_services.yaml }
+imports:
+    - { resource: ../../../../src/TargetAdds/Shared/Infrastructure/Symfony/DependencyInjection/target_adds.yaml }
 services:
     _defaults:
         autoconfigure: true
         autowire: true
-    #
-    #     # Configure
-    # _instanceof:
-    #     Acme\Shared\Domain\Bus\Event\DomainEventSubscriber:
-    #         tags: ['acme.domain_event_subscriber']
-    #     Acme\Shared\Domain\Bus\Command\CommandHandler:
-    #         tags: ['acme.command_handler']
-    #     Acme\Shared\Domain\Bus\Query\QueryHandler:
-    #         tags: ['acme.query_handler']
-    #     Acme\Apps\TargetAdds\Front\Controller\:
-    #         resource: '../src/Controller'
-    #     tags: ['controller.service_arguments']
-    #
+
+    Acme\Apps\TargetAdds\Front\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
         # Wire
     Acme\Shared\:
         resource: '../../../../src/Shared'

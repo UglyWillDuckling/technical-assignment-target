@@ -1,0 +1,18 @@
+services:
+  # Databases
+  Doctrine\ORM\EntityManager:
+    factory: [ Acme\TargetAdds\Infrastructure\Doctrine\TargetAddsEntityManagerFactory, create ]
+    arguments:
+      - driver: '%env(TARGETADDS_DATABASE_DRIVER)%'
+        host: '%env(TARGETADDS_DATABASE_HOST)%'
+        port: '%env(TARGETADDS_DATABASE_PORT)%'
+        dbname: '%env(TARGETADDS_DATABASE_NAME)%'
+        user: '%env(TARGETADDS_DATABASE_USER)%'
+        password: '%env(TARGETADDS_DATABASE_PASSWORD)%'
+      - '%env(APP_ENV)%'
+    tags:
+      - { name: targetadds.database_connection }
+    public: true
+
+      # Courses TODO
+    # Acme\TargetAdds\Courses\Domain\CourseRepository: '@Acme\TargetAdds\Courses\Infrastructure\Persistence\DoctrineCourseRepository'

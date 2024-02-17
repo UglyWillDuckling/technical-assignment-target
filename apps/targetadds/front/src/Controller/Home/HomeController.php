@@ -12,12 +12,12 @@ use Doctrine\ORM\EntityManager;
 use Acme\Shared\Infrastructure\Symfony\ApiExceptionsHttpStatusCodeMapping;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Routing\RouterInterface;
-use Twig\Environment;
+use Twig\Environment as TwigEnv;
 
 final class HomeController extends WebController
 {
 	public function __construct(
-		Environment $twig,
+		TwigEnv $twig,
 		RouterInterface $router,
 		RequestStack $requestStack,
 		ApiExceptionsHttpStatusCodeMapping $exceptionHandler,

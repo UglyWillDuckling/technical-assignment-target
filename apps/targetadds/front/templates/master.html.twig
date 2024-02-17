@@ -4,8 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <meta name="view-transition" content="same-origin" />
-<title>{% block title %}Symfony Demo application{% endblock %}</title>
-
+<title>{% block title %}TargetAdds Assignment{% endblock %}</title>
 {#
     Those two blocks defines frontend entrypoint for CSS and JavaScript assets
         See https://symfony.com/doc/current/frontend.html
@@ -16,66 +15,24 @@
 </head>
     <body id="{% block body_id %}{% endblock %}">
     {% block header %}
-    {% set _route = app.request.get('_route') %}
-    <header>
-        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
-        <div class="container">
-        <a class="navbar-brand" href="{{ path('home_get') }}">
-        Symfony Demo
-        </a>
-        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#appNavbar" aria-controls="appNavbar" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="navbar-collapse collapse" id="appNavbar">
-        <ul class="navbar-nav ml-auto">
-        {% block header_navigation_links %}
-        {% endblock %}
-        </li>
-
-        </ul>
-        </div>
-        </div>
-        </nav>
-    </header>
+    {{ include('partials/header.html.twig') }}
     {% endblock %}
-
     <div class="container body-container">
-    {% block body %}
-        <div class="row">
-            <div id="main" class="col-sm-9">
-                {% for message in app.flashes('notice') %}
-                    <div class="flash-notice">
-                        {{ message }}
-                    </div>
-                {% endfor %}
-            {% block main %}{% endblock %}
+        {% block body %}
+            <div class="row">
+                <div id="main" class="col-sm-9">
+                    {% for message in app.flashes('notice') %}
+                        <div class="flash-notice">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% block main %}{% endblock %}
+                </div>
             </div>
-        </div>
-    {% endblock %}
+        {% endblock %}
     </div>
-
     {% block footer %}
-    <footer>
-    <div class="container">
-    <div class="row">
-    <div id="footer-copyright" class="col-md-6">
-    <p>&copy; {{ 'now'|date('Y') }} - The Symfony Project</p>
-    <p>{{ 'mit_license'|trans }}</p>
-    </div>
-    <div id="footer-resources" class="col-md-6">
-    <p>
-    <a rel="noopener noreferrer" target="_blank" href="https://twitter.com/symfony" title="Symfony on X (formerly Twitter)">
-    <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
-    </a>
-    <a target="_blank" href="https://symfony.com/blog/" title="Symfony Blog">
-    <i class="fa-solid fa-rss" aria-hidden="true"></i>
-    </a>
-    </p>
-    </div>
-    </div>
-    </div>
-    </footer>
+    {{ include('partials/footer.html.twig') }}
     {% endblock %}
     </body>
 </html>

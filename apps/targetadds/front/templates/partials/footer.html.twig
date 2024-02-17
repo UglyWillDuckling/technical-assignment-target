@@ -1,7 +1,20 @@
-<footer class="flex items-center justify-between flex-wrap bg-teal-900 p-5 mt-10">
-    <div class="container mx-auto px-4">
-        <p class="text-teal-200">
-            🤙 CodelyTV - El mejor backoffice de la historia
-        </p>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div id="footer-copyright" class="col-md-6">
+                <p>&copy; {{ 'now'|date('Y') }} - The Symfony Project</p>
+            <p>{{ 'mit_license'|trans }}</p>
+            </div>
+            <div id="footer-resources" class="col-md-6">
+                <p>
+                    <a rel="noopener noreferrer" target="_blank" href="https://twitter.com/symfony" title="Symfony on X (formerly Twitter)">
+                        <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                    </a>
+                    <a target="_blank" href="https://symfony.com/blog/" title="Symfony Blog">
+                        <i class="fa-solid fa-rss" aria-hidden="true"></i>
+                    </a>
+                </p>
+            </div>
+        </div>
     </div>
 </footer>

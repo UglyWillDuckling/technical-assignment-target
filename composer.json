@@ -54,8 +54,7 @@
         "psalm/plugin-phpunit": "^0.18.4",
         "phpstan/phpstan": "^1.10",
         "phpat/phpat": "^0.10.10",
-        "phpmd/phpmd": "^2.14",
-        "codelytv/coding-style": "^1.1"
+        "phpmd/phpmd": "^2.14"
     },
     "autoload": {
         "psr-4": {
@@ -66,7 +65,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "CodelyTv\\Tests\\": ["tests"]
+            "Acme\\Tests\\": ["tests"]
         }
     },
     "minimum-stability": "RC",

@@ -21,7 +21,7 @@ use function Lambdish\Phunctional\dissoc;
 final class DoctrineEntityManagerFactory
 {
   private static array $sharedPrefixes = [
-    __DIR__ . '/../../../Shared/Infrastructure/Persistence/Mappings' => 'CodelyTv\Shared\Domain',
+    __DIR__ . '/../../../Shared/Infrastructure/Persistence/Mappings' => 'Acme\Shared\Domain',
   ];
 
   public static function create(

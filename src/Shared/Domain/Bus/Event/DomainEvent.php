@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Acme\Shared\Domain\Bus\Event;
 
-use CodelyTv\Shared\Domain\Utils;
-use CodelyTv\Shared\Domain\ValueObject\SimpleUuid;
+use Acme\Shared\Domain\Utils;
+use Acme\Shared\Domain\ValueObject\SimpleUuid;
 use DateTimeImmutable;
 
 abstract class DomainEvent

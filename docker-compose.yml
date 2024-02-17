@@ -27,24 +27,6 @@ services:
       retries: 10
     command: ["--default-authentication-plugin=mysql_native_password"]
 
-  # targetadds_backend_php:
-  #   container_name: targetadds_backend_php
-  #   user: "${UID}:${GID}"
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile
-  #   restart: unless-stopped
-  #   ports:
-  #     - "8040:8040"
-  #     - "9040:9001"
-  #   volumes:
-  #     - .:/app:delegated
-  #   depends_on:
-  #     - shared_rabbitmq
-  #     - shared_prometheus
-  #     - targetadds_elasticsearch
-  #   command: symfony serve --dir=apps/targetadds/backend/public --port=8040
-
   targetadds_frontend_php:
     container_name: targetadds_frontend_php
     user: "${UID}:${GID}"

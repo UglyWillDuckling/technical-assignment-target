@@ -8,7 +8,7 @@ composer-install:
 		--no-ansi
 
 test:
-	docker exec targetadds_frontend_php ./vendor/bin/phpunit --testsuite backoffice
+	docker exec targetadds_frontend_php ./vendor/bin/phpunit --testsuite targetadds
 
 static-analysis:
 	docker exec targetadds_frontend_php ./vendor/bin/psalm --output-format=github --shepherd

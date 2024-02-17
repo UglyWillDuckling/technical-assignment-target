@@ -35,12 +35,5 @@ jobs:
               sleep 2
           done
 
-      - name: 🐰 Wait for RabbitMQ to get up
-        run: |
-          while ! make ping-rabbitmq &>/dev/null; do
-              echo "Waiting for RabbitMQ connection..."
-              sleep 2
-          done
-
       - name: ✅ Run the tests
         run: make test

@@ -10,8 +10,8 @@ final class CartRemoval
 {
   public function __construct(
     public readonly string $id,
-    public readonly string $cartId,
-    public readonly string $customerId,
+    public readonly string $cart_id,
+    public readonly string $customer_id,
     public readonly string $sku
   ) {}
 
@@ -29,8 +29,8 @@ final class CartRemoval
   {
     return [
       'id' => $this->id,
-      'cart_id' => $this->cartId,
-      'customer_id' => $this->CustomerId,
+      'cart_id' => $this->cart_id,
+      'customer_id' => $this->customer_id,
       'sku' => $this->sku,
     ];
   }

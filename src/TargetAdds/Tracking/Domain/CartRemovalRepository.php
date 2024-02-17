@@ -8,7 +8,7 @@ use Acme\Shared\Domain\Criteria\Criteria;
 
 interface CartRemovalRepository
 {
-  public function save(BackofficeCourse $course): void;
+  public function save(CartRemoval $course): void;
 
   public function searchAll(): array;
 

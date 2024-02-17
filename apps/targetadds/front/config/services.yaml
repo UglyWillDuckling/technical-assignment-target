@@ -42,3 +42,4 @@ services:
               # -- IMPLEMENTATIONS SELECTOR --
           # Acme\Shared\Domain\Bus\Event\EventBus: '@acme\Shared\Infrastructure\Bus\Event\WithMonitoring\WithPrometheusMonitoringEventBus'
           # Acme\Backoffice\Courses\Domain\BackofficeCourseRepository: '@acme\Backoffice\Courses\Infrastructure\Persistence\ElasticsearchBackofficeCourseRepository'
+    Acme\TargetAdds\Tracking\Domain\CartRemovalRepository: '@Acme\TargetAdds\Tracking\Infrastructure\Persistence\MysqlCartRemovalRepository'

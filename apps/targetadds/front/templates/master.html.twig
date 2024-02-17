@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="{{ app.request.locale }}">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="view-transition" content="same-origin" />
-<title>{% block title %}TargetAdds Assignment{% endblock %}</title>
-{#
-    Those two blocks defines frontend entrypoint for CSS and JavaScript assets
-        See https://symfony.com/doc/current/frontend.html
-#}
-{% block stylesheets %}{% endblock %}
-{% block javascripts %}
-{% endblock %}
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="view-transition" content="same-origin" />
+        <title>{% block title %}TargetAdds Assignment{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        {% block javascripts %}
+        {% endblock %}
+        <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    </head>
     <body id="{% block body_id %}{% endblock %}">
     {% block header %}
     {{ include('partials/header.html.twig') }}

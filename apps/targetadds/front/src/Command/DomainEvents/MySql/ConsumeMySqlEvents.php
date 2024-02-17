@@ -6,8 +6,8 @@ namespace Acme\Apps\TargetAdds\Front\Command\DomainEvents\MySql;
 
 use Acme\Shared\Domain\Bus\Event\DomainEvent;
 
-use CodelyTv\Shared\Infrastructure\Bus\Event\DomainEventSubscriberLocator;
-use CodelyTv\Shared\Infrastructure\Bus\Event\MySql\MySqlDoctrineDomainEventsConsumer;
+use Acme\Shared\Infrastructure\Bus\Event\DomainEventSubscriberLocator;
+use Acme\Shared\Infrastructure\Bus\Event\MySql\MySqlDoctrineDomainEventsConsumer;
 
 use Acme\Shared\Infrastructure\Doctrine\DatabaseConnections;
 

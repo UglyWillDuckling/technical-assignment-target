@@ -13,4 +13,6 @@ interface CartRemovalRepository
   public function searchAll(): array;
 
   public function matching(Criteria $criteria): array;
+
+  public  function byCartId(string $cartId): array;
 }

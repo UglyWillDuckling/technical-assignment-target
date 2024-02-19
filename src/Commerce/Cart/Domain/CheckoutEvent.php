@@ -6,21 +6,21 @@ namespace Acme\Commerce\Cart\Domain;
 
 use Acme\Shared\Domain\Bus\Event\DomainEvent;
 
-final class CartItemRemovedEvent extends DomainEvent
+final class CheckoutEvent extends DomainEvent
 {
   public function __construct(
-      public readonly string $item_id,
     public readonly string $cart_id,
-    public readonly string $sku,
+    public readonly string $customer_id,
+    public readonly array $productSkus,
     string $eventId = null,
     string $occurredOn = null
   ) {
-    parent::__construct($this->item_id, $eventId, $occurredOn);
+    parent::__construct($cart_id, $eventId, $occurredOn);
   }
 
   public static function eventName(): string
   {
-    return 'cart-item.removed';
+    return 'commerce.checkout';
   }
 
   public static function fromPrimitives(
@@ -30,19 +30,20 @@ final class CartItemRemovedEvent extends DomainEvent
     string $occurredOn
   ): DomainEvent {
     return new self(
-      (string)$body['item_id'],
       (string)$body['cart_id'],
-      $body['sku'],
-      $eventId, $occurredOn
+      (string)$body['customer_id'],
+      $body['productSkus'],
+      $eventId,
+      $occurredOn
     );
   }
 
   public function toPrimitives(): array
   {
     return [
-      'item_id' => $this->item_id,
       'cart_id' => $this->cart_id,
-      'sku' => $this->sku,
+      'customer_id' => $this->customer_id,
+      'productSkus' => $this->productSkus,
     ];
   }
 }

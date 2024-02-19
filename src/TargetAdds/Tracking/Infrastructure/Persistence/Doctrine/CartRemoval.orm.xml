@@ -5,9 +5,8 @@
   https://www.doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
 <entity name="Acme\TargetAdds\Tracking\Domain\CartRemoval" table="targetadds_cart_removal">
-  <id name="id" type="string" column="id" length="36" />
-  <id name="cart_id" type="int" column="cart_id" length="36" />
-  <id name="customer_id" type="string" column="customer_id" length="36" />
-  <id name="sku" type="string" column="sku" length="255" />
+  <id name="id" type="string" column="id" length="44" />
+  <field name="cart_id" type="string" column="cart_id" length="36" />
+  <field name="sku" type="string" column="sku" length="255" />
 </entity>
 </doctrine-mapping>

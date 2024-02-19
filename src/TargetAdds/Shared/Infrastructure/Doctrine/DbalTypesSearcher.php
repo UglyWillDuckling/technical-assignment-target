@@ -58,7 +58,7 @@ public static function inPath(string $path, string $contextName): array
 
 					$classWithoutPrefix = str_replace(['.php', '/'], ['', '\\'], $splittedPath[1]);
 
-					return "CodelyTv\\$contextName\\$classWithoutPrefix";
+					return "Acme\\$contextName\\$classWithoutPrefix";
 				},
 				$files
 			);

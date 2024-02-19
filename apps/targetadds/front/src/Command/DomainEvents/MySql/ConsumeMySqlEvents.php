@@ -5,12 +5,9 @@ declare(strict_types=1);
 namespace Acme\Apps\TargetAdds\Front\Command\DomainEvents\MySql;
 
 use Acme\Shared\Domain\Bus\Event\DomainEvent;
-
 use Acme\Shared\Infrastructure\Bus\Event\DomainEventSubscriberLocator;
-use Acme\Shared\Infrastructure\Bus\Event\MySql\MySqlDoctrineDomainEventsConsumer;
-
+use Acme\Shared\Infrastructure\Bus\Event\MySql\DoctrineDomainEventsConsumer;
 use Acme\Shared\Infrastructure\Doctrine\DatabaseConnections;
-
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
@@ -23,7 +20,7 @@ use function Lambdish\Phunctional\pipe;
 final class ConsumeMySqlEvents extends Command
 {
   public function __construct(
-    private readonly MySqlDoctrineDomainEventsConsumer $consumer,
+    private readonly DoctrineDomainEventsConsumer $consumer,
     private readonly DatabaseConnections $connections,
     private readonly DomainEventSubscriberLocator $subscriberLocator
   ) {

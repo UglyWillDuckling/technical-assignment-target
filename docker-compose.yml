@@ -1,17 +1,17 @@
 version: '3'
 
 services:
-  shared_rabbitmq:
-    container_name: targetadds-rabbitmq
-    image: 'rabbitmq:3.10.5-management'
-    restart: unless-stopped
-    ports:
-      - "5630:5672"
-      - "8090:15672"
-    environment:
-      - RABBITMQ_DEFAULT_USER=targetadds
-      - RABBITMQ_DEFAULT_PASS=target
-
+  # shared_rabbitmq:
+  #   container_name: targetadds-rabbitmq
+  #   image: 'rabbitmq:3.10.5-management'
+  #   restart: unless-stopped
+  #   ports:
+  #     - "5630:5672"
+  #     - "8090:15672"
+  #   environment:
+  #     - RABBITMQ_DEFAULT_USER=targetadds
+  #     - RABBITMQ_DEFAULT_PASS=target
+  #
   targetadds-mysql:
     container_name: targetadds-mysql
     image: mariadb:10.7.4
@@ -38,9 +38,9 @@ services:
       - "8041:8041"
       - "9041:9001"
     volumes:
-      - .:/app:delegated
+      - .:/app:cached
     depends_on:
-      - shared_rabbitmq
+      # - shared_rabbitmq
       - targetadds-mysql
     command: symfony serve --dir=apps/targetadds/front/public --port=8041
 

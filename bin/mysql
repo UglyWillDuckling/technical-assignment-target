@@ -1,8 +1,11 @@
 #!/bin/bash
 
-# shellcheck source=.env
-source .env
-
+TARGETADDS_DATABASE_DRIVER=pdo_mysql
+TARGETADDS_DATABASE_HOST=targetadds-mysql
+TARGETADDS_DATABASE_PORT=3306
+TARGETADDS_DATABASE_NAME=targetadds
+TARGETADDS_DATABASE_USER=root
+TARGETADDS_DATABASE_PASSWORD=
 host=$TARGETADDS_DATABASE_HOST
 user=$TARGETADDS_DATABASE_USER
 db_name=$TARGETADDS_DATABASE_NAME
@@ -16,3 +19,4 @@ else
   # Read from stdin, ex: bin/mysql < dbdump.sql
   bin/clinotty mysql -h"${host}" -u"${user}" -p"${pass}" "${db_name}" "$@"
 fi
+

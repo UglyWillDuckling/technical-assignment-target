@@ -10,3 +10,4 @@
 .phpunit.result.cache
 
 Session.vim
+.idea/

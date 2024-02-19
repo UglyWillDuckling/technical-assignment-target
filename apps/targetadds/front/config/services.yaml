@@ -5,9 +5,24 @@ services:
         autoconfigure: true
         autowire: true
 
+    # Configure
+    _instanceof:
+        Acme\Shared\Domain\Bus\Event\DomainEventSubscriber:
+            tags: ['acme.domain_event_subscriber']
+
+    Acme\Shared\Domain\Bus\Command\CommandHandler:
+        tags: ['acme.command_handler']
+
+    Acme\Shared\Domain\Bus\Query\QueryHandler:
+        tags: ['acme.query_handler']
+
     Acme\Apps\TargetAdds\Front\Controller\:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
+
+    Acme\Apps\TargetAdds\Front\Command\:
+        resource: '../src/Command'
+        tags: ['console.command']
 
         # Wire
     Acme\Shared\:
@@ -16,30 +31,21 @@ services:
     Acme\TargetAdds\:
         resource: '../../../../src/TargetAdds'
 
-    # -- APP DEFINITIONS --
-    # Command/Query Handlers
-    # Acme\Shared\Infrastructure\Bus\Command\InMemorySymfonyCommandBus:
-    #   arguments: [!tagged acme.command_handler]
-    #
-    # Acme\Shared\Infrastructure\Bus\Query\InMemorySymfonyQueryBus:
-    #   arguments: [!tagged acme.query_handler]
-    #
-    # RabbitMQ
-    # CodelyTv\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConnection:
-    #     arguments:
-    #         - host: '%env(RABBITMQ_HOST)%'
-    #     port: '%env(RABBITMQ_PORT)%'
-    #     vhost: '%env(RABBITMQ_MOOC_VHOST)%'
-    #     login: '%env(RABBITMQ_LOGIN)%'
-    #     password: '%env(RABBITMQ_PASSWORD)%'
-    #     read_timeout: 2
-    #     write_timeout: 2
-    #     connect_timeout: 5
+    # -- TAGGING --
+    Acme\Shared\Infrastructure\Bus\Event\InMemory\InMemorySymfonyEventBus:
+        arguments: [!tagged acme.domain_event_subscriber]
+        lazy: true
 
-    # Acme\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqEventBus:
-    #   arguments: ['@Acme\Shared\Infrastructure\Bus\Event\RabbitMq\RabbitMqConnection', '%env(RABBITMQ_EXCHANGE)%']
+    Acme\Shared\Infrastructure\Bus\Event\DomainEventMapping:
+        arguments: [!tagged acme.domain_event_subscriber]
 
-              # -- IMPLEMENTATIONS SELECTOR --
-          # Acme\Shared\Domain\Bus\Event\EventBus: '@acme\Shared\Infrastructure\Bus\Event\WithMonitoring\WithPrometheusMonitoringEventBus'
-          # Acme\Backoffice\Courses\Domain\BackofficeCourseRepository: '@acme\Backoffice\Courses\Infrastructure\Persistence\ElasticsearchBackofficeCourseRepository'
+    Acme\Shared\Infrastructure\Bus\Event\DomainEventSubscriberLocator:
+        arguments: [!tagged acme.domain_event_subscriber]
+
+    Acme\Shared\Infrastructure\Doctrine\DatabaseConnections:
+        arguments: [!tagged acme.database_connection]
+
+    # -- IMPLEMENTATIONS SELECTOR
+    Acme\Shared\Domain\Bus\Event\EventBus: '@Acme\Shared\Infrastructure\Bus\Event\MySql\DoctrineEventBus'
     Acme\TargetAdds\Tracking\Domain\CartRemovalRepository: '@Acme\TargetAdds\Tracking\Infrastructure\Persistence\MysqlCartRemovalRepository'
+    Acme\TargetAdds\Tracking\Domain\DroppedItemRepository: '@Acme\TargetAdds\Tracking\Infrastructure\Persistence\MysqlDroppedItemsRepository'

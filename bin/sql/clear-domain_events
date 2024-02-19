@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+
+bin/mysql -e "DELETE FROM domain_events"
+

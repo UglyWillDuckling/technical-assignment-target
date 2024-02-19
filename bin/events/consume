@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+docker exec -it targetadds_frontend_php apps/targetadds/front/bin/console acme:domain-events:mysql:consume "$@"
+

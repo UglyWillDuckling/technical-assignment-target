@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+bin/mysql -e "select * FROM targetadds_dropped_items ORDER BY created_at"
+

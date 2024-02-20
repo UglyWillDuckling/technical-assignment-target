@@ -31,9 +31,11 @@ final class DoctrineEntityManagerFactory
     string $schemaFile,
     array $dbalCustomTypesClasses
   ): EntityManager {
-    if ($isDevMode) {
-      self::generateDatabaseIfNotExists($parameters, $schemaFile);
-    }
+      self::ensureSchemaFileExists($schemaFile);
+
+      if ($isDevMode) {
+          self::generateDatabaseIfNotExists($parameters, $schemaFile);
+      }
 
     DbalCustomTypesRegistrar::register($dbalCustomTypesClasses);
 
@@ -49,8 +51,6 @@ final class DoctrineEntityManagerFactory
 
   private static function generateDatabaseIfNotExists(array $parameters, string $schemaFile): void
   {
-    self::ensureSchemaFileExists($schemaFile);
-
     $databaseName = $parameters['dbname'];
     $parametersWithoutDatabaseName = dissoc($parameters, 'dbname');
     $connection = DriverManager::getConnection($parametersWithoutDatabaseName);

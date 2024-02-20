@@ -37,7 +37,7 @@ final readonly class CreateDroppedItemsOnCheckout implements DomainEventSubscrib
         $removedItems = $this->removalRepo->byCartId($event->cart_id);
 
         $removedItems = filter(
-            fn($cartRemoval) => !in_array($cartRemoval->sku, $productSkus, true), $removedItems);
+            fn(CartRemoval $cartRemoval) => !in_array($cartRemoval->sku, $productSkus, true), $removedItems);
 
         // TODO: the droppedItem should have a unique ID Class
         $droppedItems = map(

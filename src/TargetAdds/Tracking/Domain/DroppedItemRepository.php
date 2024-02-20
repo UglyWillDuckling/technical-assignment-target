@@ -10,9 +10,9 @@ interface DroppedItemRepository
 {
   public function save(DroppedItem $droppedItem): void;
 
-    /** @return list{int, DroppedItem} */
+    /** @return array{int, DroppedItem} */
     public function searchAll(): array;
 
-    /** @return list{string, int} */
+    /** @return array{string, DroppedItem} */
     public function matching(Criteria $criteria): array;
 }

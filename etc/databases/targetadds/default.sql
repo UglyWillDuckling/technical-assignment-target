@@ -18,7 +18,8 @@ CREATE TABLE targetadds_cart_removal (
 	id CHAR(36) NOT NULL,
 	cart_id CHAR(36) NOT NULL,
 	sku VARCHAR(255) NOT NULL,
-	PRIMARY KEY (id)
+    created_at DATE NOT NULL,
+    PRIMARY KEY (id)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8mb4
   COLLATE = utf8mb4_unicode_ci;
@@ -28,7 +29,7 @@ CREATE TABLE targetadds_dropped_items (
   cart_id CHAR(36) NOT NULL,
   customer_id CHAR(36) NOT NULL,
   sku VARCHAR(255) NOT NULL,
-  created_at DATETIME NOT NULL,
+  created_at DATE NOT NULL,
   PRIMARY KEY (id)
 ) ENGINE = InnoDB
 DEFAULT CHARSET = utf8mb4

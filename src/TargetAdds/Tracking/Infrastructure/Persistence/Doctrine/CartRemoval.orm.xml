@@ -8,5 +8,6 @@
   <id name="id" type="string" column="id" length="44" />
   <field name="cart_id" type="string" column="cart_id" length="36" />
   <field name="sku" type="string" column="sku" length="255" />
+  <field name="created_at" type="date" column="created_at" />
 </entity>
 </doctrine-mapping>

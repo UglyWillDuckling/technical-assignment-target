@@ -30,23 +30,24 @@ final readonly class CreateDroppedItemsOnCheckout implements DomainEventSubscrib
 
     public function __invoke(CheckoutEvent $event): void
     {
-        $cartId = $event->cart_id;
+        $droppedRepository = $this->droppedItemRepository;
         $customerId = $event->customer_id;
         $productSkus = $event->productSkus;
 
         $removedItems = $this->removalRepo->byCartId($event->cart_id);
 
         $removedItems = filter(
-            fn(CartRemoval $cartRemoval) => !in_array($cartRemoval->sku, $productSkus, true), $removedItems);
+            fn(CartRemoval $cartRemoval) => !in_array($cartRemoval->sku, $productSkus, true),
+            $removedItems
+        );
 
-        // TODO: the droppedItem should have a unique ID Class
         $droppedItems = map(
             fn (CartRemoval $cartRemoval)
-                => new DroppedItem(Uuid::uuid4()->toString(), $cartId, $customerId, $cartRemoval->sku), $removedItems);
+                => new DroppedItem(Uuid::uuid4()->toString(), $customerId, $cartRemoval->sku),
+            $removedItems
+        );
 
-        $droppedRepository = $this->droppedItemRepository;
-
-        each(static fn (DroppedItem $droppedItem) => $droppedRepository->save($droppedItem), $droppedItems);
+        each(fn (DroppedItem $droppedItem) => $droppedRepository->save($droppedItem), $droppedItems);
     }
 }
 

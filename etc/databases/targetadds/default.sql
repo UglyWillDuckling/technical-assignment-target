@@ -26,7 +26,6 @@ CREATE TABLE targetadds_cart_removal (
 
 CREATE TABLE targetadds_dropped_items (
   id CHAR(36) NOT NULL,
-  cart_id CHAR(36) NOT NULL,
   customer_id CHAR(36) NOT NULL,
   sku VARCHAR(255) NOT NULL,
   created_at DATE NOT NULL,

@@ -6,7 +6,6 @@
 
   <entity name="Acme\TargetAdds\Tracking\Domain\DroppedItem" table="targetadds_dropped_items">
     <id name="id" type="string" column="id" length="36" />
-    <field name="cart_id" type="string" column="cart_id" length="36" />
     <field name="customer_id" type="string" column="customer_id" length="36" />
     <field name="sku" type="string" column="sku" length="255" />
     <field name="created_at" type="date" column="created_at" />

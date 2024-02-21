@@ -5,14 +5,20 @@ declare(strict_types=1);
 namespace Acme\TargetAdds\Tracking\Domain;
 
 use Acme\Shared\Domain\Criteria\Criteria;
+use Acme\TargetAdds\Tracking\Domain\DroppedItem\DroppedItemsByProduct;
+use Acme\TargetAdds\Tracking\Domain\DroppedItem\DroppedItemsByCustomer;
 
 interface DroppedItemRepository
 {
   public function save(DroppedItem $droppedItem): void;
 
-    /** @return array{int, DroppedItem} */
-    public function searchAll(): array;
+    public function searchAll(): DroppedItemsCollection;
 
-    /** @return array{string, DroppedItem} */
-    public function matching(Criteria $criteria): array;
+    public function matching(Criteria $criteria): DroppedItemsCollection;
+
+    /** @return array{int, DroppedItemsByProduct}  */
+    public function byProduct(): array;
+
+    /** @return array{int, DroppedItemsByCustomer}  */
+    public function byCustomer(): array;
 }

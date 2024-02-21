@@ -13,6 +13,11 @@ final readonly class Criteria
 		private ?int $limit
 	) {}
 
+    public static function empty(): Criteria
+    {
+        return new self(new Filters([]), Order::none(), null, null);
+    }
+
 	public function hasFilters(): bool
 	{
 		return $this->filters->count() > 0;

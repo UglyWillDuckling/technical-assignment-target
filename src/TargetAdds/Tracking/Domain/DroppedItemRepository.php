@@ -16,9 +16,9 @@ interface DroppedItemRepository
 
     public function matching(Criteria $criteria): DroppedItemsCollection;
 
-    /** @return array{int, DroppedItemsByProduct}  */
-    public function byProduct(): array;
+    /** @return DroppedItem\DroppedItemsByProductCollection  */
+    public function byProduct(Criteria $criteria): DroppedItem\DroppedItemsByProductCollection;
 
-    /** @return array{int, DroppedItemsByCustomer}  */
-    public function byCustomer(): array;
+    /** @return DroppedItem\DroppedItemsByCustomerCollection  */
+    public function byCustomer(Criteria $criteria): DroppedItem\DroppedItemsByCustomerCollection;
 }

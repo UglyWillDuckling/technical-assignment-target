@@ -13,7 +13,7 @@ final class DroppedItem extends AggregateRoot
 
   public function __construct(
       // TODO: the ID should be a unique Type
-    public readonly string $id,
+    private readonly string $id,
     public readonly string $customer_id,
     public readonly string $sku
   ) {

@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Acme\TargetAdds\Tracking\Domain;
+namespace Acme\TargetAdds\Tracking\Domain\DroppedItem;
 
 use Acme\Shared\Domain\Collection;
 
-class DroppedItemsCollection extends Collection {
+class DroppedItemsByCustomerCollection extends Collection {
     public function __construct(array $items, private readonly int $total_count)
     {
         parent::__construct($items);
@@ -19,6 +19,6 @@ class DroppedItemsCollection extends Collection {
 
     protected function type(): string
     {
-        return DroppedItem::class;
+        return DroppedItemsByCustomer::class;
     }
 }

@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Acme\TargetAdds\Tracking\Domain\DroppedItem;
 
-class DroppedItemsByCustomer {
+readonly class DroppedItemsByCustomer {
     public function __construct(
-        public readonly string $sku,
-        public readonly string $customer_id,
-        public readonly int $total
+        public string $sku,
+        public string $customer_id,
+        public int    $total
     ) {}
 }

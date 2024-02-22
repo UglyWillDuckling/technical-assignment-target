@@ -5,8 +5,6 @@ declare(strict_types=1);
 namespace Acme\TargetAdds\Tracking\Domain;
 
 use Acme\Shared\Domain\Criteria\Criteria;
-use Acme\TargetAdds\Tracking\Domain\DroppedItem\DroppedItemsByProduct;
-use Acme\TargetAdds\Tracking\Domain\DroppedItem\DroppedItemsByCustomer;
 
 interface DroppedItemRepository
 {

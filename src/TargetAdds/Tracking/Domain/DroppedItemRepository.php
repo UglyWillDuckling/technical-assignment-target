@@ -10,6 +10,8 @@ interface DroppedItemRepository
 {
   public function save(DroppedItem $droppedItem): void;
 
+    public function search(string $id): DroppedItem;
+
     public function searchAll(): DroppedItemsCollection;
 
     public function matching(Criteria $criteria): DroppedItemsCollection;

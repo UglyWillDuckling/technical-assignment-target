@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Acme\TargetAdds\Tracking\Infrastructure\Persistence;
 
+use Acme\TargetAdds\Tracking\Domain\DroppedItemNotFound;
 use DateTime;
 
 use Acme\Shared\Domain\Criteria\Criteria;
@@ -16,7 +17,6 @@ use Acme\TargetAdds\Tracking\Domain\DroppedItemRepository;
 use Acme\TargetAdds\Tracking\Domain\DroppedItemsCollection;
 
 use Doctrine\Common\Collections\Criteria as DoctrineCriteria;
-use Doctrine\ORM\Query as DoctrineQuery;
 use Doctrine\ORM\Tools\Pagination\Paginator;
 
 use function lambdish\phunctional\map;
@@ -26,6 +26,19 @@ final class MysqlDroppedItemsRepository extends DoctrineRepository implements Dr
     public function save(DroppedItem $droppedItem): void
     {
         $this->persist($droppedItem);
+    }
+
+    /**
+     * @throws DroppedItemNotFound
+     */
+    public function search(string $id): DroppedItem {
+        $item = $this->repository(DroppedItem::class)->find($id);
+
+        if (!$item) {
+            throw new DroppedItemNotFound( $id);
+        }
+
+        return $this->repository(DroppedItem::class)->find($id);
     }
 
     public function searchAll(): DroppedItemsCollection

@@ -77,7 +77,7 @@ final readonly class DoctrineCriteriaConverter
 			return null;
 		}
 
-		return [$this->mapOrderBy($criteria->order()->orderBy()) => $criteria->order()->orderType()];
+		return [$this->mapOrderBy($criteria->order()->orderBy()) => $criteria->order()->orderType()->value];
 	}
 
 	private function mapOrderBy(OrderBy $field): mixed

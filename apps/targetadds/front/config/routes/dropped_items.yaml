@@ -1,0 +1,15 @@
+dropped_items:
+  path: /dropped/items
+  controller: Acme\Apps\TargetAdds\Front\Controller\DroppedItem\DroppedItemsGetController
+  defaults: { auth: false }
+  methods:  [GET]
+dropped_items_by-customer:
+  path: /dropped/items/bycustomer
+  controller: Acme\Apps\TargetAdds\Front\Controller\DroppedItem\DroppedItemsByCustomerController
+  defaults: { auth: false }
+  methods:  [GET]
+dropped_items_by-product:
+   path: /dropped/items/byproduct
+   controller: Acme\Apps\TargetAdds\Front\Controller\DroppedItem\DroppedItemsByProductController
+   defaults: { auth: false }
+   methods: [ GET ]

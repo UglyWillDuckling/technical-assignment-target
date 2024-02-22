@@ -12,6 +12,7 @@ enum FilterOperator: string
 	case LT = '<';
 	case CONTAINS = 'CONTAINS';
 	case NOT_CONTAINS = 'NOT_CONTAINS';
+	case IN = 'IN';
 
 	public function isContaining(): bool
 	{

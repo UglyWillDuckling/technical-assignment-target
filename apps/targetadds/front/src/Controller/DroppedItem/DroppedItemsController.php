@@ -16,15 +16,11 @@ readonly abstract class DroppedItemsController
     {
         $items = $this->getItems($this->createCriteria($request));
 
-        $resp = new JsonResponse(
+        return new JsonResponse(
             array_merge(['total_count' => $items->countTotal()], ['items' => map($this->itemsMapping(), $items)]),
             200,
             ['Access-Control-Allow-Origin' => '*']
         );
-
-        $resp->setMaxAge(0)->setSharedMaxAge(0);
-
-        return $resp;
     }
 
     abstract protected function getItems(Criteria $criteria): iterable;

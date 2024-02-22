@@ -1,3 +1,8 @@
+dropped_item:
+  path: /dropped/item/{id}
+  controller: Acme\Apps\TargetAdds\Front\Controller\DroppedItem\ItemGetController
+  defaults: { auth: false }
+  methods:  [GET]
 dropped_items:
   path: /dropped/items
   controller: Acme\Apps\TargetAdds\Front\Controller\DroppedItem\DroppedItemsGetController

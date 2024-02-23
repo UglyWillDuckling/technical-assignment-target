@@ -22,17 +22,22 @@ final class MysqlDroppedItemsRepository extends DoctrineRepository implements Dr
         $this->persist($droppedItem);
     }
 
+    public function saveCollection(DroppedItemsCollection $coll): void
+    {
+        $this->persistCollection($coll);
+    }
+
     /**
      * @throws DroppedItemNotFound
      */
     public function search(string $id): DroppedItem {
         $item = $this->repository(DroppedItem::class)->find($id);
 
-        if (!$item) {
+        if ($item === NULL) {
             throw new DroppedItemNotFound( $id);
         }
 
-        return $this->repository(DroppedItem::class)->find($id);
+        return $item;
     }
 
     public function searchAll(): DroppedItemsCollection
@@ -58,6 +63,31 @@ final class MysqlDroppedItemsRepository extends DoctrineRepository implements Dr
         return DoctrineCriteriaConverter::convert($criteria, [], [
             'created_at' => fn(string $value) => new DateTime($value)]
         );
+    }
+
+    private function countTotal(array $columns, Criteria $criteria): int
+    {
+        $alias = 'd';
+
+        if (count($columns) > 1) {
+            $columnsSelect = implode(',', map(fn(string $column)  => "$alias.$column", $columns));
+            $select = "COUNT(DISTINCT CONCAT($columnsSelect))";
+        } else {
+            $select = "COUNT(DISTINCT $alias.$columns[0])";
+        }
+
+        $qb = $this->queryBuilder($alias, $select);
+
+        $qb->addCriteria(DoctrineCriteriaConverter::convert($criteria));
+
+        return (int)$qb->getQuery()->getSingleScalarResult();
+    }
+
+    private function queryBuilder(string $alias, string $select): \Doctrine\ORM\QueryBuilder
+    {
+        return $this->repository(DroppedItem::class)
+            ->createQueryBuilder($alias)
+            ->select($select);
     }
 }
 

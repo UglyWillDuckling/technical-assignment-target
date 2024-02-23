@@ -3,80 +3,49 @@
 namespace Acme\TargetAdds\Tracking\Infrastructure\Persistence;
 
 use Acme\Shared\Domain\Criteria\Criteria;
-use Acme\Shared\Domain\Criteria\Filter;
-use Acme\Shared\Infrastructure\Persistence\Doctrine\DoctrineCriteriaConverter;
 use Acme\TargetAdds\Tracking\Domain\DroppedItem;
 use Acme\TargetAdds\Tracking\Domain\DroppedItem\DroppedItemsByProduct;
 use Acme\TargetAdds\Tracking\Domain\DroppedItem\DroppedItemsByProductCollection;
 use Acme\TargetAdds\Tracking\Domain\DroppedItem\DroppedItemsByProductQuery;
 
-use Doctrine\ORM\EntityManager;
-use Doctrine\ORM\QueryBuilder;
+use Doctrine\ORM\Query;
 use Doctrine\ORM\Tools\Pagination\Paginator;
-use Acme\Shared\Domain\Criteria\Filters;
 
+use Override;
 use function Lambdish\Phunctional\map;
 
-readonly class MysqlDroppedItemsByProductQuery implements DroppedItemsByProductQuery
+class MysqlDroppedItemsByProductQuery extends AggregateQuery implements DroppedItemsByProductQuery
 {
-    private const array HAVING_FIELDS = ['total'];
+    private const array AGGREGATE_FIELDS = ['total'];
 
-    public function __construct(private EntityManager $entityManager) {}
-
-    public function matching(Criteria $criteria): DroppedItemsByProductCollection
+    #[Override] protected function aggregateFields(): array
     {
-        $qb = $this->queryBuilder();
+        return self::AGGREGATE_FIELDS;
+    }
 
-        $qb->from(DroppedItem::class, 'd');
-        $qb->select('d.sku, COUNT(d.sku) as total');
-        $qb->groupBy('d.sku');
+    #[Override] public function matching(Criteria $criteria): DroppedItemsByProductCollection
+    {
+        return parent::matching($criteria);
+    }
 
-        $this->applyCriteria($qb, $criteria);
+    #[Override] protected function select(): string
+    {
+        return 'd.sku, COUNT(d.sku) as total';
+    }
 
-        $query = $qb->getQuery();
+    #[Override] protected function groupBy(): string
+    {
+        return 'd.sku';
+    }
 
+    protected function createResultCollection(Query $query)
+    {
         $items = $query->getResult();
         $totalCount = (new Paginator($query))->count();
 
-        return new DroppedItem\DroppedItemsByProductCollection(map(
-            fn (array $row) => new DroppedItemsByProduct($row['sku'], (int)$row['total']),
-            $items
-        ), $totalCount);
-    }
-
-    private function applyCriteria(QueryBuilder $qb, mixed $criteria): void
-    {
-        [$criteria, $havingFilters] = $this->splitCriteria($criteria);
-
-        $qb->addCriteria(DoctrineCriteriaConverter::convert($criteria));
-
-        /** @var Filter $filter */
-        foreach ($havingFilters as $filter) {
-            // Example - $qb->having('u.salary >= ?1')
-            $qb->having("{$filter->field()} {$filter->operator()->value} {$filter->value()->value()}");
-        }
-    }
-
-    private function splitCriteria(Criteria $criteria): array
-    {
-        $filters = [];
-        $havingFilters = [];
-        foreach ($criteria->plainFilters() as $filter) {
-            if(in_array($filter->field()->value(), self::HAVING_FIELDS, true)) {
-                $havingFilters[] = $filter;
-                continue;
-            }
-            $filters[] = $filter;
-        }
-
-        return [
-            new Criteria(new Filters($filters), $criteria->order(), $criteria->offset(), $criteria->limit()),
-            $havingFilters
-        ];
-    }
-
-    private function queryBuilder(): QueryBuilder
-    {
-        return $this->entityManager->createQueryBuilder();
+        return new DroppedItem\DroppedItemsByProductCollection(
+            map(fn (array $row) => new DroppedItemsByProduct($row['sku'], (int)$row['total']), $items),
+            $totalCount);
     }
 }
+

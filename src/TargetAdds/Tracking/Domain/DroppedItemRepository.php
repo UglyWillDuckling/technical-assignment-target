@@ -15,10 +15,4 @@ interface DroppedItemRepository
     public function searchAll(): DroppedItemsCollection;
 
     public function matching(Criteria $criteria): DroppedItemsCollection;
-
-    /** @return DroppedItem\DroppedItemsByProductCollection  */
-    public function byProduct(Criteria $criteria): DroppedItem\DroppedItemsByProductCollection;
-
-    /** @return DroppedItem\DroppedItemsByCustomerCollection  */
-    public function byCustomer(Criteria $criteria): DroppedItem\DroppedItemsByCustomerCollection;
 }

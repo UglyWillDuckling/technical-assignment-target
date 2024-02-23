@@ -1,0 +1,12 @@
+{
+  "languageserver": {
+    "phpactor": {
+      "filetypes": [
+        "php",
+        "xml",
+        "yaml"
+      ]
+    }
+  }
+}
+

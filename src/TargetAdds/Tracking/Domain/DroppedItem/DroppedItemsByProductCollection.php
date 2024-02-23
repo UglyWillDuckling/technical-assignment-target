@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Acme\TargetAdds\Tracking\Domain\DroppedItem;
 
 use Acme\Shared\Domain\Collection;
-use Acme\TargetAdds\Tracking\Domain\DroppedItem;
 
 class DroppedItemsByProductCollection extends Collection {
     public function __construct(array $items, private readonly int $total_count)

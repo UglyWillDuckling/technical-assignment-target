@@ -34,5 +34,13 @@ CREATE TABLE targetadds_dropped_items (
 DEFAULT CHARSET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
 
-
+CREATE INDEX `targetadds_dropped_items__sku-customer_id`
+ON targetadds_dropped_items (sku, customer_id)
+COMMENT 'sku and customer_id index';
+CREATE INDEX targetadds_dropped_items__index_sku
+ON targetadds_dropped_items (sku)
+COMMENT 'Sku Index';
+CREATE INDEX `targetadds_dropped_items__index-created_at`
+ON targetadds_dropped_items (created_at)
+COMMENT 'Created At Index';
 

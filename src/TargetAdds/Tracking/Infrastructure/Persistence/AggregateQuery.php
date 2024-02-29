@@ -6,6 +6,7 @@ use Acme\Shared\Domain\Collection;
 use Acme\Shared\Domain\Criteria\Criteria;
 use Acme\Shared\Domain\Criteria\Filter;
 use Acme\Shared\Domain\Criteria\Filters;
+use Acme\Shared\Domain\Criteria\Order;
 use Acme\Shared\Infrastructure\Persistence\Doctrine\DoctrineCriteriaConverter;
 use Acme\TargetAdds\Tracking\Domain\DroppedItem;
 use Doctrine\ORM\EntityManager;
@@ -41,13 +42,17 @@ abstract class AggregateQuery
 
     private function applyCriteria(QueryBuilder $qb, Criteria $criteria): void
     {
-        [$criteria, $aggregateFilters] = $this->splitCriteria($criteria);
+        [$criteria, $aggregateFilters, $aggregateOrder] = $this->splitCriteria($criteria);
 
         $qb->addCriteria(DoctrineCriteriaConverter::convert($criteria));
 
         /** @var Filter $filter */
         foreach ($aggregateFilters as $filter) {
             $qb->having("{$filter->field()} {$filter->operator()->value} {$filter->value()->value()}");
+        }
+
+        if ($aggregateOrder) {
+            $qb->orderBy($aggregateOrder->orderBy()->value(), $aggregateOrder->orderType()->value);
         }
     }
 
@@ -63,9 +68,17 @@ abstract class AggregateQuery
             $filters[] = $filter;
         }
 
+        $aggregateOrder = null;
+        $order = $criteria->order();
+        if (in_array($criteria->order()->orderBy()->value(), $this->aggregateFields())) {
+            $aggregateOrder = $criteria->order();
+            $order = Order::none();
+        }
+
         return [
-            new Criteria(new Filters($filters), $criteria->order(), $criteria->offset(), $criteria->limit()),
-            $aggregateFilters
+            new Criteria(new Filters($filters), $order, $criteria->offset(), $criteria->limit()),
+            $aggregateFilters,
+            $aggregateOrder
         ];
     }
 

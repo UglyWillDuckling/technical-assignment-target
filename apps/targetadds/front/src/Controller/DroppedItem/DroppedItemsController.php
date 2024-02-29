@@ -2,6 +2,7 @@
 
 namespace Acme\Apps\TargetAdds\Front\Controller\DroppedItem;
 
+use Acme\Shared\Domain\Collection;
 use Acme\Shared\Domain\Criteria\Criteria;
 use Acme\Shared\Domain\Criteria\Filters;
 use Acme\Shared\Domain\Criteria\Order;
@@ -23,7 +24,7 @@ readonly abstract class DroppedItemsController
         );
     }
 
-    abstract protected function getItems(Criteria $criteria): iterable;
+    abstract protected function getItems(Criteria $criteria): Collection;
 
     abstract protected function itemsMapping(): callable;
 
@@ -32,10 +33,10 @@ readonly abstract class DroppedItemsController
         $limit = $request->query->get('limit');
         $offset = $request->query->get('offset');
 
-        $filtersString = Utils::jsonDecode($request->query->get('filters') ?? '{}');
+        $filters = Utils::jsonDecode($request->query->get('filters') ?? '{}');
 
-        $filters = Filters::fromValues($filtersString);
-        $order = Order::fromValues($request->query->get('order_by'), $request->query->get('order'));
+        $filters = Filters::fromValues($filters);
+        $order = Order::fromValues((string)$request->query->get('order_by'), $request->query->get('order'));
 
         return (new Criteria($filters, $order,
             $offset === null ? null : (int)$offset,

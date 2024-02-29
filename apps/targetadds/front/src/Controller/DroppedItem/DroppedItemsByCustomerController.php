@@ -1,24 +1,19 @@
 <?php
-/**
- * DroppedItemsGetController
- *
- * @copyright Copyright © 2024 Staempfli AG. All rights reserved.
- * @author    juan.alonso@staempfli.com
- */
 
 namespace Acme\Apps\TargetAdds\Front\Controller\DroppedItem;
 
 use Acme\Shared\Domain\Criteria\Criteria;
-use Acme\TargetAdds\Tracking\Domain\DroppedItemRepository;
+use Acme\TargetAdds\Tracking\Domain\DroppedItem\DroppedItemsByCustomerCollection;
+use Acme\TargetAdds\Tracking\Domain\DroppedItem\DroppedItemsByCustomerQuery;
 use Acme\TargetAdds\Tracking\Domain\DroppedItem;
 
 readonly class DroppedItemsByCustomerController extends DroppedItemsController
 {
-    public function __construct(private DroppedItemRepository $droppedItemRepository){}
+    public function __construct(private DroppedItemsByCustomerQuery $byCustomerQuery){}
 
-    #[\Override] protected function getItems(Criteria $criteria): iterable
+    #[\Override] protected function getItems(Criteria $criteria): DroppedItemsByCustomerCollection
     {
-        return $this->droppedItemRepository->byCustomer($criteria);
+        return $this->byCustomerQuery->matching($criteria);
     }
 
     #[\Override] protected function itemsMapping(): callable

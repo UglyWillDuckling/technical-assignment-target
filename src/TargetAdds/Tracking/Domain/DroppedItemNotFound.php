@@ -6,7 +6,7 @@ namespace Acme\TargetAdds\Tracking\Domain;
 
 use Exception;
 
-final  class DroppedItemNotFound extends Exception {
+final class DroppedItemNotFound extends Exception {
     public function __construct(private readonly string $id) {
         parent::__construct();
     }

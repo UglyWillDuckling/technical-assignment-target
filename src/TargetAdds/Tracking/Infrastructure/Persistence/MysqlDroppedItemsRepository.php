@@ -34,7 +34,7 @@ final class MysqlDroppedItemsRepository extends DoctrineRepository implements Dr
         $item = $this->repository(DroppedItem::class)->find($id);
 
         if ($item === NULL) {
-            throw new DroppedItemNotFound( $id);
+            throw new DroppedItemNotFound($id);
         }
 
         return $item;

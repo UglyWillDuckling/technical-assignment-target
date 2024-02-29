@@ -1,0 +1,4844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free bootstrap documentation template">
+    <title>Dropped Items Assignment</title>
+    <!-- using online links -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css">
+    <!-- using local links -->
+    <link rel="stylesheet" href="css/main.min.css">
+    <link rel="stylesheet" href="css/sidebar-themes.min.css">
+    <link rel="stylesheet" href="css/bootstrap-treeview.min.css">
+    <link rel="stylesheet" href="css/postman.min.css">
+
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" /> </head>
+
+<body>
+    <div class="page-wrapper toggled light-theme">
+        <div class="modal dark-background" id="snippetModal" tabindex="-1" role="dialog" aria-labelledby="documentation-response-modal" style="display: none;">
+        <div class="modal-dialog" role="document">
+          <div class="modal-header">
+            <div class="title">Example Response</div>
+            <button type="button" class="close btn-circle" data-dismiss="modal" aria-label="Close">
+              <div>
+              <span id="closeModal" aria-hidden="true">×</span>
+              </div>
+            </button>
+          </div>
+          <div class="modal-content">
+            <div class="modal-body" style="width: 540.5px;">
+              <pre class="  language-javascript">
+                  <code class=" language-javascript"></code>
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+        <nav id="sidebar" class="sidebar-wrapper">
+            <div class="sidebar-content">
+                <!-- sidebar-brand  -->
+                <div class="sidebar-item sidebar-brand text-white font-weight-bold">API Documentation</div>
+                <!-- sidebar-header  -->
+                <!-- sidebar-menu  -->
+                <div class=" sidebar-item sidebar-menu">
+                    <div id="tree"></div>
+                </div>
+                <!-- sidebar-menu  -->
+            </div>
+        </nav>
+        <!-- page-content  -->
+        <main class="page-content">
+            <div id="overlay" class="overlay"></div>
+            <div class="container-fluid">
+                <div class="row d-flex align-items-center p-3 border-bottom">
+                    <div class="col-md-1">
+                        <a id="toggle-sidebar" class="btn rounded-0 p-3" href="#"> <i class="fas fa-bars"></i> </a>
+                    </div>
+                    <div class="col-md-9"></div>
+                    <div class="col-md-2 text-left">
+                    </div>
+                </div>
+                <div class="row p-lg-4">
+                    <article class="main-content col-md-12 pr-lg-9" id="doc-body">
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12">
+                                <div class="api-information">
+                                    <div class="collection-name">
+                                        <p>Dropped Items Assignment</p>
+                                    </div>
+                                    <div class="collection-description">
+                                        <p></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="1">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            Get item <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">{{HOST}}/dropped/item/{{dropped_item_id}}</div>
+                                    
+                                    <div class="description request-description">
+                                        <p><h3 id="summary">Summary</h3>
+<p>A basic route for fetching a single Dropped Item based on the ID param.</p></p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn   responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Example</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="1" data-response-info="response_1">Example</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="1"  data-id="response_1">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Example">
+                                                <code class="is-highlighted">
+GET {{HOST}}/dropped/item/{{dropped_item_id}}</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Example">
+                                                    <code class="is-highlighted">
+{
+    "item": {
+        "created_at": {
+            "date": "2024-02-26 00:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "UTC"
+        },
+        "customer_id": "812",
+        "sku": "fugit"
+    }
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="2">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            Get Items <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">{{HOST}}/dropped/items</div>
+                                    
+                                    <div class="description request-description">
+                                        <p><h2 id="summary">Summary</h2>
+<p>Route for fetching Dropped Items.</p>
+<p>Allows filtering and sorting.</p></p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle  responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Filter By Date</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="2" data-response-info="response_2">Filter By Date</li>
+                                                <li class="truncate" data-request-info="2" data-response-info="response_3">Filter by Sku</li>
+                                                <li class="truncate" data-request-info="2" data-response-info="response_4">Filter By Customer Id</li>
+                                                <li class="truncate" data-request-info="2" data-response-info="response_5">Multiple Filters</li>
+                                                <li class="truncate" data-request-info="2" data-response-info="response_6">Order By</li>
+                                                <li class="truncate" data-request-info="2" data-response-info="response_7">Limit</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="2"  data-id="response_2">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Filter By Date">
+                                                <code class="is-highlighted">
+GET {{HOST}}/dropped/items?filters=[{"operator":">","field":"created_at","value":"2024-02-10"}]</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Filter By Date">
+                                                    <code class="is-highlighted">
+{
+    "total_count": 200012,
+    "items": [
+        {
+            "sku": "fugit",
+            "customer_id": "812",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "architecto",
+            "customer_id": "259",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "cum",
+            "customer_id": "607",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "animi",
+            "customer_id": "593",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "pariatur",
+            "customer_id": "545",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "quae",
+            "customer_id": "671",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "rerum",
+            "customer_id": "172",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "eius",
+            "customer_id": "943",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "rerum",
+            "customer_id": "807",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "sint",
+            "customer_id": "207",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "et",
+            "customer_id": "904",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        }
+    ]
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="formatted-requests hide" data-request-id="2"  data-id="response_3">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Filter by Sku">
+                                                <code class="is-highlighted">
+GET {{HOST}}/dropped/items?filters=[ {"field": "sku","operator": ">","value": "0001"}]</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Filter by Sku">
+                                                    <code class="is-highlighted">
+{
+    "total_count": 200011,
+    "items": [
+        {
+            "sku": "0002",
+            "customer_id": "737",
+            "created_at": {
+                "date": "2024-02-29 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "0003",
+            "customer_id": "905",
+            "created_at": {
+                "date": "2024-02-29 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "0004",
+            "customer_id": "13",
+            "created_at": {
+                "date": "2024-02-29 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "0005",
+            "customer_id": "459",
+            "created_at": {
+                "date": "2024-02-29 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "0006",
+            "customer_id": "469",
+            "created_at": {
+                "date": "2024-02-29 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "0007",
+            "customer_id": "747",
+            "created_at": {
+                "date": "2024-02-29 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "0008",
+            "customer_id": "868",
+            "created_at": {
+                "date": "2024-02-29 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "0009",
+            "customer_id": "354",
+            "created_at": {
+                "date": "2024-02-29 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "0010",
+            "customer_id": "791",
+            "created_at": {
+                "date": "2024-02-29 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "a",
+            "customer_id": "24",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "a",
+            "customer_id": "959",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        }
+    ]
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="formatted-requests hide" data-request-id="2"  data-id="response_4">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Filter By Customer Id">
+                                                <code class="is-highlighted">
+GET {{HOST}}/dropped/items?filters=[ {"field": "customer_id","operator": ">","value": "1"}]</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Filter By Customer Id">
+                                                    <code class="is-highlighted">
+{
+    "total_count": 199815,
+    "items": [
+        {
+            "sku": "fugit",
+            "customer_id": "812",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "architecto",
+            "customer_id": "259",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "cum",
+            "customer_id": "607",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "animi",
+            "customer_id": "593",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "pariatur",
+            "customer_id": "545",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "quae",
+            "customer_id": "671",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "rerum",
+            "customer_id": "172",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "eius",
+            "customer_id": "943",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "rerum",
+            "customer_id": "807",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "sint",
+            "customer_id": "207",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "et",
+            "customer_id": "904",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        }
+    ]
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="formatted-requests hide" data-request-id="2"  data-id="response_5">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Multiple Filters">
+                                                <code class="is-highlighted">
+GET {{HOST}}/dropped/items?filters=[{"field":"created_at","operator":">","value":"2024-02-10"},{"field":"sku","operator":"=","value":"0005"}]</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Multiple Filters">
+                                                    <code class="is-highlighted">
+{
+    "total_count": 1,
+    "items": [
+        {
+            "sku": "0005",
+            "customer_id": "459",
+            "created_at": {
+                "date": "2024-02-29 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        }
+    ]
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="formatted-requests hide" data-request-id="2"  data-id="response_6">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Order By">
+                                                <code class="is-highlighted">
+GET {{HOST}}/dropped/items?order_by=created_at&order=asc&limit=11</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Order By">
+                                                    <code class="is-highlighted">
+{
+    "total_count": 200012,
+    "items": [
+        {
+            "sku": "fugit",
+            "customer_id": "812",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "architecto",
+            "customer_id": "259",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "cum",
+            "customer_id": "607",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "animi",
+            "customer_id": "593",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "pariatur",
+            "customer_id": "545",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "quae",
+            "customer_id": "671",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "rerum",
+            "customer_id": "172",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "eius",
+            "customer_id": "943",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "rerum",
+            "customer_id": "807",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "sint",
+            "customer_id": "207",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "et",
+            "customer_id": "904",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        }
+    ]
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="formatted-requests hide" data-request-id="2"  data-id="response_7">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Limit">
+                                                <code class="is-highlighted">
+GET {{HOST}}/dropped/items?limit=10</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Limit">
+                                                    <code class="is-highlighted">
+{
+    "total_count": 200012,
+    "items": [
+        {
+            "sku": "fugit",
+            "customer_id": "812",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "architecto",
+            "customer_id": "259",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "cum",
+            "customer_id": "607",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "animi",
+            "customer_id": "593",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "pariatur",
+            "customer_id": "545",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "quae",
+            "customer_id": "671",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "rerum",
+            "customer_id": "172",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "eius",
+            "customer_id": "943",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "rerum",
+            "customer_id": "807",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "sint",
+            "customer_id": "207",
+            "created_at": {
+                "date": "2024-02-26 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        }
+    ]
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="3">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            By Product <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">{{HOST}}/dropped/items/byproduct</div>
+                                    
+                                    <div class="description request-description">
+                                        <p><h3 id="summary">Summary</h3>
+<p>Route for fetching items that are grouped by product.</p></p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle  responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Filter By Sku</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="3" data-response-info="response_8">Filter By Sku</li>
+                                                <li class="truncate" data-request-info="3" data-response-info="response_9">Filter By Date</li>
+                                                <li class="truncate" data-request-info="3" data-response-info="response_10">Multiple Filters</li>
+                                                <li class="truncate" data-request-info="3" data-response-info="response_11">Order By Total</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="3"  data-id="response_8">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Filter By Sku">
+                                                <code class="is-highlighted">
+GET http://localhost:8041/dropped/items/byproduct?filters=[{"field": "sku","operator": ">","value": "0001"}]</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Filter By Sku">
+                                                    <code class="is-highlighted">
+{
+    "total_count": 191,
+    "items": [
+        {
+            "sku": "0002",
+            "total": 1
+        },
+        {
+            "sku": "0003",
+            "total": 1
+        },
+        {
+            "sku": "0004",
+            "total": 1
+        },
+        {
+            "sku": "0005",
+            "total": 1
+        },
+        {
+            "sku": "0006",
+            "total": 1
+        },
+        {
+            "sku": "0007",
+            "total": 1
+        },
+        {
+            "sku": "0008",
+            "total": 1
+        },
+        {
+            "sku": "0009",
+            "total": 1
+        },
+        {
+            "sku": "0010",
+            "total": 1
+        },
+        {
+            "sku": "a",
+            "total": 852
+        },
+        {
+            "sku": "ab",
+            "total": 767
+        },
+        {
+            "sku": "accusamus",
+            "total": 768
+        },
+        {
+            "sku": "accusantium",
+            "total": 783
+        },
+        {
+            "sku": "ad",
+            "total": 777
+        },
+        {
+            "sku": "adipisci",
+            "total": 831
+        },
+        {
+            "sku": "alias",
+            "total": 820
+        },
+        {
+            "sku": "aliquam",
+            "total": 820
+        },
+        {
+            "sku": "aliquid",
+            "total": 844
+        },
+        {
+            "sku": "amet",
+            "total": 806
+        },
+        {
+            "sku": "animi",
+            "total": 805
+        },
+        {
+            "sku": "aperiam",
+            "total": 838
+        },
+        {
+            "sku": "architecto",
+            "total": 786
+        },
+        {
+            "sku": "asperiores",
+            "total": 801
+        },
+        {
+            "sku": "aspernatur",
+            "total": 892
+        },
+        {
+            "sku": "assumenda",
+            "total": 826
+        },
+        {
+            "sku": "at",
+            "total": 839
+        },
+        {
+            "sku": "atque",
+            "total": 826
+        },
+        {
+            "sku": "aut",
+            "total": 4753
+        },
+        {
+            "sku": "autem",
+            "total": 1579
+        },
+        {
+            "sku": "beatae",
+            "total": 796
+        },
+        {
+            "sku": "blanditiis",
+            "total": 809
+        },
+        {
+            "sku": "commodi",
+            "total": 788
+        },
+        {
+            "sku": "consectetur",
+            "total": 782
+        },
+        {
+            "sku": "consequatur",
+            "total": 2399
+        },
+        {
+            "sku": "consequuntur",
+            "total": 795
+        },
+        {
+            "sku": "corporis",
+            "total": 867
+        },
+        {
+            "sku": "corrupti",
+            "total": 772
+        },
+        {
+            "sku": "culpa",
+            "total": 804
+        },
+        {
+            "sku": "cum",
+            "total": 819
+        },
+        {
+            "sku": "cumque",
+            "total": 785
+        },
+        {
+            "sku": "cupiditate",
+            "total": 817
+        },
+        {
+            "sku": "debitis",
+            "total": 796
+        },
+        {
+            "sku": "delectus",
+            "total": 753
+        },
+        {
+            "sku": "deleniti",
+            "total": 797
+        },
+        {
+            "sku": "deserunt",
+            "total": 856
+        },
+        {
+            "sku": "dicta",
+            "total": 807
+        },
+        {
+            "sku": "dignissimos",
+            "total": 806
+        },
+        {
+            "sku": "distinctio",
+            "total": 784
+        },
+        {
+            "sku": "dolor",
+            "total": 1659
+        },
+        {
+            "sku": "dolore",
+            "total": 780
+        },
+        {
+            "sku": "dolorem",
+            "total": 1618
+        },
+        {
+            "sku": "doloremque",
+            "total": 839
+        },
+        {
+            "sku": "dolores",
+            "total": 1577
+        },
+        {
+            "sku": "doloribus",
+            "total": 821
+        },
+        {
+            "sku": "dolorum",
+            "total": 809
+        },
+        {
+            "sku": "ducimus",
+            "total": 757
+        },
+        {
+            "sku": "ea",
+            "total": 1623
+        },
+        {
+            "sku": "eaque",
+            "total": 790
+        },
+        {
+            "sku": "earum",
+            "total": 811
+        },
+        {
+            "sku": "eius",
+            "total": 790
+        },
+        {
+            "sku": "eligendi",
+            "total": 841
+        },
+        {
+            "sku": "enim",
+            "total": 1630
+        },
+        {
+            "sku": "eos",
+            "total": 1558
+        },
+        {
+            "sku": "error",
+            "total": 814
+        },
+        {
+            "sku": "esse",
+            "total": 849
+        },
+        {
+            "sku": "est",
+            "total": 4056
+        },
+        {
+            "sku": "et",
+            "total": 8686
+        },
+        {
+            "sku": "eum",
+            "total": 1556
+        },
+        {
+            "sku": "eveniet",
+            "total": 825
+        },
+        {
+            "sku": "ex",
+            "total": 773
+        },
+        {
+            "sku": "excepturi",
+            "total": 856
+        },
+        {
+            "sku": "exercitationem",
+            "total": 803
+        },
+        {
+            "sku": "expedita",
+            "total": 771
+        },
+        {
+            "sku": "explicabo",
+            "total": 812
+        },
+        {
+            "sku": "facere",
+            "total": 796
+        },
+        {
+            "sku": "facilis",
+            "total": 796
+        },
+        {
+            "sku": "fuga",
+            "total": 884
+        },
+        {
+            "sku": "fugiat",
+            "total": 780
+        },
+        {
+            "sku": "fugit",
+            "total": 831
+        },
+        {
+            "sku": "harum",
+            "total": 782
+        },
+        {
+            "sku": "hic",
+            "total": 833
+        },
+        {
+            "sku": "id",
+            "total": 1648
+        },
+        {
+            "sku": "illo",
+            "total": 765
+        },
+        {
+            "sku": "illum",
+            "total": 833
+        },
+        {
+            "sku": "impedit",
+            "total": 804
+        },
+        {
+            "sku": "in",
+            "total": 1612
+        },
+        {
+            "sku": "incidunt",
+            "total": 788
+        },
+        {
+            "sku": "inventore",
+            "total": 801
+        },
+        {
+            "sku": "ipsa",
+            "total": 791
+        },
+        {
+            "sku": "ipsam",
+            "total": 769
+        },
+        {
+            "sku": "ipsum",
+            "total": 785
+        },
+        {
+            "sku": "iste",
+            "total": 817
+        },
+        {
+            "sku": "itaque",
+            "total": 764
+        },
+        {
+            "sku": "iure",
+            "total": 838
+        },
+        {
+            "sku": "iusto",
+            "total": 779
+        },
+        {
+            "sku": "labore",
+            "total": 804
+        },
+        {
+            "sku": "laboriosam",
+            "total": 809
+        },
+        {
+            "sku": "laborum",
+            "total": 754
+        },
+        {
+            "sku": "laudantium",
+            "total": 809
+        },
+        {
+            "sku": "libero",
+            "total": 774
+        },
+        {
+            "sku": "magnam",
+            "total": 813
+        },
+        {
+            "sku": "magni",
+            "total": 785
+        },
+        {
+            "sku": "maiores",
+            "total": 773
+        },
+        {
+            "sku": "maxime",
+            "total": 765
+        },
+        {
+            "sku": "minima",
+            "total": 813
+        },
+        {
+            "sku": "minus",
+            "total": 763
+        },
+        {
+            "sku": "modi",
+            "total": 784
+        },
+        {
+            "sku": "molestiae",
+            "total": 1627
+        },
+        {
+            "sku": "molestias",
+            "total": 759
+        },
+        {
+            "sku": "mollitia",
+            "total": 784
+        },
+        {
+            "sku": "nam",
+            "total": 790
+        },
+        {
+            "sku": "natus",
+            "total": 802
+        },
+        {
+            "sku": "necessitatibus",
+            "total": 807
+        },
+        {
+            "sku": "nemo",
+            "total": 803
+        },
+        {
+            "sku": "neque",
+            "total": 790
+        },
+        {
+            "sku": "nesciunt",
+            "total": 775
+        },
+        {
+            "sku": "nihil",
+            "total": 1632
+        },
+        {
+            "sku": "nisi",
+            "total": 824
+        },
+        {
+            "sku": "nobis",
+            "total": 810
+        },
+        {
+            "sku": "non",
+            "total": 2428
+        },
+        {
+            "sku": "nostrum",
+            "total": 795
+        },
+        {
+            "sku": "nulla",
+            "total": 797
+        },
+        {
+            "sku": "numquam",
+            "total": 847
+        },
+        {
+            "sku": "occaecati",
+            "total": 727
+        },
+        {
+            "sku": "odio",
+            "total": 853
+        },
+        {
+            "sku": "odit",
+            "total": 849
+        },
+        {
+            "sku": "officia",
+            "total": 798
+        },
+        {
+            "sku": "officiis",
+            "total": 822
+        },
+        {
+            "sku": "omnis",
+            "total": 2367
+        },
+        {
+            "sku": "optio",
+            "total": 842
+        },
+        {
+            "sku": "pariatur",
+            "total": 830
+        },
+        {
+            "sku": "perferendis",
+            "total": 787
+        },
+        {
+            "sku": "perspiciatis",
+            "total": 771
+        },
+        {
+            "sku": "placeat",
+            "total": 831
+        },
+        {
+            "sku": "porro",
+            "total": 847
+        },
+        {
+            "sku": "possimus",
+            "total": 795
+        },
+        {
+            "sku": "praesentium",
+            "total": 825
+        },
+        {
+            "sku": "provident",
+            "total": 796
+        },
+        {
+            "sku": "quae",
+            "total": 788
+        },
+        {
+            "sku": "quaerat",
+            "total": 827
+        },
+        {
+            "sku": "quam",
+            "total": 816
+        },
+        {
+            "sku": "quas",
+            "total": 795
+        },
+        {
+            "sku": "quasi",
+            "total": 758
+        },
+        {
+            "sku": "qui",
+            "total": 4903
+        },
+        {
+            "sku": "quia",
+            "total": 3213
+        },
+        {
+            "sku": "quibusdam",
+            "total": 811
+        },
+        {
+            "sku": "quidem",
+            "total": 811
+        },
+        {
+            "sku": "quis",
+            "total": 1575
+        },
+        {
+            "sku": "quisquam",
+            "total": 822
+        },
+        {
+            "sku": "quo",
+            "total": 1590
+        },
+        {
+            "sku": "quod",
+            "total": 808
+        },
+        {
+            "sku": "quos",
+            "total": 801
+        },
+        {
+            "sku": "ratione",
+            "total": 823
+        },
+        {
+            "sku": "recusandae",
+            "total": 760
+        },
+        {
+            "sku": "reiciendis",
+            "total": 826
+        },
+        {
+            "sku": "rem",
+            "total": 766
+        },
+        {
+            "sku": "repellat",
+            "total": 794
+        },
+        {
+            "sku": "repellendus",
+            "total": 843
+        },
+        {
+            "sku": "reprehenderit",
+            "total": 771
+        },
+        {
+            "sku": "repudiandae",
+            "total": 837
+        },
+        {
+            "sku": "rerum",
+            "total": 2477
+        },
+        {
+            "sku": "saepe",
+            "total": 784
+        },
+        {
+            "sku": "sapiente",
+            "total": 783
+        },
+        {
+            "sku": "sed",
+            "total": 2373
+        },
+        {
+            "sku": "sequi",
+            "total": 866
+        },
+        {
+            "sku": "similique",
+            "total": 804
+        },
+        {
+            "sku": "sint",
+            "total": 1634
+        },
+        {
+            "sku": "sit",
+            "total": 2416
+        },
+        {
+            "sku": "soluta",
+            "total": 801
+        },
+        {
+            "sku": "sunt",
+            "total": 1611
+        },
+        {
+            "sku": "suscipit",
+            "total": 772
+        },
+        {
+            "sku": "tempora",
+            "total": 773
+        },
+        {
+            "sku": "tempore",
+            "total": 797
+        },
+        {
+            "sku": "temporibus",
+            "total": 782
+        },
+        {
+            "sku": "tenetur",
+            "total": 790
+        },
+        {
+            "sku": "totam",
+            "total": 766
+        },
+        {
+            "sku": "ullam",
+            "total": 783
+        },
+        {
+            "sku": "unde",
+            "total": 801
+        },
+        {
+            "sku": "ut",
+            "total": 4682
+        },
+        {
+            "sku": "vel",
+            "total": 1653
+        },
+        {
+            "sku": "velit",
+            "total": 1567
+        },
+        {
+            "sku": "veniam",
+            "total": 844
+        },
+        {
+            "sku": "veritatis",
+            "total": 854
+        },
+        {
+            "sku": "vero",
+            "total": 836
+        },
+        {
+            "sku": "vitae",
+            "total": 834
+        },
+        {
+            "sku": "voluptas",
+            "total": 2442
+        },
+        {
+            "sku": "voluptate",
+            "total": 769
+        },
+        {
+            "sku": "voluptatem",
+            "total": 3308
+        },
+        {
+            "sku": "voluptates",
+            "total": 789
+        },
+        {
+            "sku": "voluptatibus",
+            "total": 785
+        },
+        {
+            "sku": "voluptatum",
+            "total": 787
+        }
+    ]
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="formatted-requests hide" data-request-id="3"  data-id="response_9">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Filter By Date">
+                                                <code class="is-highlighted">
+GET {{HOST}}/dropped/items/byproduct?filters=[{"operator":">","field":"created_at","value":"2024-02-10"}]</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Filter By Date">
+                                                    <code class="is-highlighted">
+{
+    "total_count": 192,
+    "items": [
+        {
+            "sku": "0001",
+            "total": 1
+        },
+        {
+            "sku": "0002",
+            "total": 1
+        },
+        {
+            "sku": "0003",
+            "total": 1
+        },
+        {
+            "sku": "0004",
+            "total": 1
+        },
+        {
+            "sku": "0005",
+            "total": 1
+        },
+        {
+            "sku": "0006",
+            "total": 1
+        },
+        {
+            "sku": "0007",
+            "total": 1
+        },
+        {
+            "sku": "0008",
+            "total": 1
+        },
+        {
+            "sku": "0009",
+            "total": 1
+        },
+        {
+            "sku": "0010",
+            "total": 1
+        },
+        {
+            "sku": "a",
+            "total": 852
+        },
+        {
+            "sku": "ab",
+            "total": 767
+        },
+        {
+            "sku": "accusamus",
+            "total": 768
+        },
+        {
+            "sku": "accusantium",
+            "total": 783
+        },
+        {
+            "sku": "ad",
+            "total": 777
+        },
+        {
+            "sku": "adipisci",
+            "total": 831
+        },
+        {
+            "sku": "alias",
+            "total": 820
+        },
+        {
+            "sku": "aliquam",
+            "total": 820
+        },
+        {
+            "sku": "aliquid",
+            "total": 844
+        },
+        {
+            "sku": "amet",
+            "total": 806
+        },
+        {
+            "sku": "animi",
+            "total": 805
+        },
+        {
+            "sku": "aperiam",
+            "total": 838
+        },
+        {
+            "sku": "architecto",
+            "total": 786
+        },
+        {
+            "sku": "asperiores",
+            "total": 801
+        },
+        {
+            "sku": "aspernatur",
+            "total": 892
+        },
+        {
+            "sku": "assumenda",
+            "total": 826
+        },
+        {
+            "sku": "at",
+            "total": 839
+        },
+        {
+            "sku": "atque",
+            "total": 826
+        },
+        {
+            "sku": "aut",
+            "total": 4753
+        },
+        {
+            "sku": "autem",
+            "total": 1579
+        },
+        {
+            "sku": "beatae",
+            "total": 796
+        },
+        {
+            "sku": "blanditiis",
+            "total": 809
+        },
+        {
+            "sku": "commodi",
+            "total": 788
+        },
+        {
+            "sku": "consectetur",
+            "total": 782
+        },
+        {
+            "sku": "consequatur",
+            "total": 2399
+        },
+        {
+            "sku": "consequuntur",
+            "total": 795
+        },
+        {
+            "sku": "corporis",
+            "total": 867
+        },
+        {
+            "sku": "corrupti",
+            "total": 772
+        },
+        {
+            "sku": "culpa",
+            "total": 804
+        },
+        {
+            "sku": "cum",
+            "total": 819
+        },
+        {
+            "sku": "cumque",
+            "total": 785
+        },
+        {
+            "sku": "cupiditate",
+            "total": 817
+        },
+        {
+            "sku": "debitis",
+            "total": 796
+        },
+        {
+            "sku": "delectus",
+            "total": 753
+        },
+        {
+            "sku": "deleniti",
+            "total": 797
+        },
+        {
+            "sku": "deserunt",
+            "total": 856
+        },
+        {
+            "sku": "dicta",
+            "total": 807
+        },
+        {
+            "sku": "dignissimos",
+            "total": 806
+        },
+        {
+            "sku": "distinctio",
+            "total": 784
+        },
+        {
+            "sku": "dolor",
+            "total": 1659
+        },
+        {
+            "sku": "dolore",
+            "total": 780
+        },
+        {
+            "sku": "dolorem",
+            "total": 1618
+        },
+        {
+            "sku": "doloremque",
+            "total": 839
+        },
+        {
+            "sku": "dolores",
+            "total": 1577
+        },
+        {
+            "sku": "doloribus",
+            "total": 821
+        },
+        {
+            "sku": "dolorum",
+            "total": 809
+        },
+        {
+            "sku": "ducimus",
+            "total": 757
+        },
+        {
+            "sku": "ea",
+            "total": 1623
+        },
+        {
+            "sku": "eaque",
+            "total": 790
+        },
+        {
+            "sku": "earum",
+            "total": 811
+        },
+        {
+            "sku": "eius",
+            "total": 790
+        },
+        {
+            "sku": "eligendi",
+            "total": 841
+        },
+        {
+            "sku": "enim",
+            "total": 1630
+        },
+        {
+            "sku": "eos",
+            "total": 1558
+        },
+        {
+            "sku": "error",
+            "total": 814
+        },
+        {
+            "sku": "esse",
+            "total": 849
+        },
+        {
+            "sku": "est",
+            "total": 4056
+        },
+        {
+            "sku": "et",
+            "total": 8686
+        },
+        {
+            "sku": "eum",
+            "total": 1556
+        },
+        {
+            "sku": "eveniet",
+            "total": 825
+        },
+        {
+            "sku": "ex",
+            "total": 773
+        },
+        {
+            "sku": "excepturi",
+            "total": 856
+        },
+        {
+            "sku": "exercitationem",
+            "total": 803
+        },
+        {
+            "sku": "expedita",
+            "total": 771
+        },
+        {
+            "sku": "explicabo",
+            "total": 812
+        },
+        {
+            "sku": "facere",
+            "total": 796
+        },
+        {
+            "sku": "facilis",
+            "total": 796
+        },
+        {
+            "sku": "fuga",
+            "total": 884
+        },
+        {
+            "sku": "fugiat",
+            "total": 780
+        },
+        {
+            "sku": "fugit",
+            "total": 831
+        },
+        {
+            "sku": "harum",
+            "total": 782
+        },
+        {
+            "sku": "hic",
+            "total": 833
+        },
+        {
+            "sku": "id",
+            "total": 1648
+        },
+        {
+            "sku": "illo",
+            "total": 765
+        },
+        {
+            "sku": "illum",
+            "total": 833
+        },
+        {
+            "sku": "impedit",
+            "total": 804
+        },
+        {
+            "sku": "in",
+            "total": 1612
+        },
+        {
+            "sku": "incidunt",
+            "total": 788
+        },
+        {
+            "sku": "inventore",
+            "total": 801
+        },
+        {
+            "sku": "ipsa",
+            "total": 791
+        },
+        {
+            "sku": "ipsam",
+            "total": 769
+        },
+        {
+            "sku": "ipsum",
+            "total": 785
+        },
+        {
+            "sku": "iste",
+            "total": 817
+        },
+        {
+            "sku": "itaque",
+            "total": 764
+        },
+        {
+            "sku": "iure",
+            "total": 838
+        },
+        {
+            "sku": "iusto",
+            "total": 779
+        },
+        {
+            "sku": "labore",
+            "total": 804
+        },
+        {
+            "sku": "laboriosam",
+            "total": 809
+        },
+        {
+            "sku": "laborum",
+            "total": 754
+        },
+        {
+            "sku": "laudantium",
+            "total": 809
+        },
+        {
+            "sku": "libero",
+            "total": 774
+        },
+        {
+            "sku": "magnam",
+            "total": 813
+        },
+        {
+            "sku": "magni",
+            "total": 785
+        },
+        {
+            "sku": "maiores",
+            "total": 773
+        },
+        {
+            "sku": "maxime",
+            "total": 765
+        },
+        {
+            "sku": "minima",
+            "total": 813
+        },
+        {
+            "sku": "minus",
+            "total": 763
+        },
+        {
+            "sku": "modi",
+            "total": 784
+        },
+        {
+            "sku": "molestiae",
+            "total": 1627
+        },
+        {
+            "sku": "molestias",
+            "total": 759
+        },
+        {
+            "sku": "mollitia",
+            "total": 784
+        },
+        {
+            "sku": "nam",
+            "total": 790
+        },
+        {
+            "sku": "natus",
+            "total": 802
+        },
+        {
+            "sku": "necessitatibus",
+            "total": 807
+        },
+        {
+            "sku": "nemo",
+            "total": 803
+        },
+        {
+            "sku": "neque",
+            "total": 790
+        },
+        {
+            "sku": "nesciunt",
+            "total": 775
+        },
+        {
+            "sku": "nihil",
+            "total": 1632
+        },
+        {
+            "sku": "nisi",
+            "total": 824
+        },
+        {
+            "sku": "nobis",
+            "total": 810
+        },
+        {
+            "sku": "non",
+            "total": 2428
+        },
+        {
+            "sku": "nostrum",
+            "total": 795
+        },
+        {
+            "sku": "nulla",
+            "total": 797
+        },
+        {
+            "sku": "numquam",
+            "total": 847
+        },
+        {
+            "sku": "occaecati",
+            "total": 727
+        },
+        {
+            "sku": "odio",
+            "total": 853
+        },
+        {
+            "sku": "odit",
+            "total": 849
+        },
+        {
+            "sku": "officia",
+            "total": 798
+        },
+        {
+            "sku": "officiis",
+            "total": 822
+        },
+        {
+            "sku": "omnis",
+            "total": 2367
+        },
+        {
+            "sku": "optio",
+            "total": 842
+        },
+        {
+            "sku": "pariatur",
+            "total": 830
+        },
+        {
+            "sku": "perferendis",
+            "total": 787
+        },
+        {
+            "sku": "perspiciatis",
+            "total": 771
+        },
+        {
+            "sku": "placeat",
+            "total": 831
+        },
+        {
+            "sku": "porro",
+            "total": 847
+        },
+        {
+            "sku": "possimus",
+            "total": 795
+        },
+        {
+            "sku": "praesentium",
+            "total": 825
+        },
+        {
+            "sku": "provident",
+            "total": 796
+        },
+        {
+            "sku": "quae",
+            "total": 788
+        },
+        {
+            "sku": "quaerat",
+            "total": 827
+        },
+        {
+            "sku": "quam",
+            "total": 816
+        },
+        {
+            "sku": "quas",
+            "total": 795
+        },
+        {
+            "sku": "quasi",
+            "total": 758
+        },
+        {
+            "sku": "qui",
+            "total": 4903
+        },
+        {
+            "sku": "quia",
+            "total": 3213
+        },
+        {
+            "sku": "quibusdam",
+            "total": 811
+        },
+        {
+            "sku": "quidem",
+            "total": 811
+        },
+        {
+            "sku": "quis",
+            "total": 1575
+        },
+        {
+            "sku": "quisquam",
+            "total": 822
+        },
+        {
+            "sku": "quo",
+            "total": 1590
+        },
+        {
+            "sku": "quod",
+            "total": 808
+        },
+        {
+            "sku": "quos",
+            "total": 801
+        },
+        {
+            "sku": "ratione",
+            "total": 823
+        },
+        {
+            "sku": "recusandae",
+            "total": 760
+        },
+        {
+            "sku": "reiciendis",
+            "total": 826
+        },
+        {
+            "sku": "rem",
+            "total": 766
+        },
+        {
+            "sku": "repellat",
+            "total": 794
+        },
+        {
+            "sku": "repellendus",
+            "total": 843
+        },
+        {
+            "sku": "reprehenderit",
+            "total": 771
+        },
+        {
+            "sku": "repudiandae",
+            "total": 837
+        },
+        {
+            "sku": "rerum",
+            "total": 2477
+        },
+        {
+            "sku": "saepe",
+            "total": 784
+        },
+        {
+            "sku": "sapiente",
+            "total": 783
+        },
+        {
+            "sku": "sed",
+            "total": 2373
+        },
+        {
+            "sku": "sequi",
+            "total": 866
+        },
+        {
+            "sku": "similique",
+            "total": 804
+        },
+        {
+            "sku": "sint",
+            "total": 1634
+        },
+        {
+            "sku": "sit",
+            "total": 2416
+        },
+        {
+            "sku": "soluta",
+            "total": 801
+        },
+        {
+            "sku": "sunt",
+            "total": 1611
+        },
+        {
+            "sku": "suscipit",
+            "total": 772
+        },
+        {
+            "sku": "tempora",
+            "total": 773
+        },
+        {
+            "sku": "tempore",
+            "total": 797
+        },
+        {
+            "sku": "temporibus",
+            "total": 782
+        },
+        {
+            "sku": "tenetur",
+            "total": 790
+        },
+        {
+            "sku": "totam",
+            "total": 766
+        },
+        {
+            "sku": "ullam",
+            "total": 783
+        },
+        {
+            "sku": "unde",
+            "total": 801
+        },
+        {
+            "sku": "ut",
+            "total": 4682
+        },
+        {
+            "sku": "vel",
+            "total": 1653
+        },
+        {
+            "sku": "velit",
+            "total": 1567
+        },
+        {
+            "sku": "veniam",
+            "total": 844
+        },
+        {
+            "sku": "veritatis",
+            "total": 854
+        },
+        {
+            "sku": "vero",
+            "total": 836
+        },
+        {
+            "sku": "vitae",
+            "total": 834
+        },
+        {
+            "sku": "voluptas",
+            "total": 2442
+        },
+        {
+            "sku": "voluptate",
+            "total": 769
+        },
+        {
+            "sku": "voluptatem",
+            "total": 3308
+        },
+        {
+            "sku": "voluptates",
+            "total": 789
+        },
+        {
+            "sku": "voluptatibus",
+            "total": 785
+        },
+        {
+            "sku": "voluptatum",
+            "total": 787
+        }
+    ]
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="formatted-requests hide" data-request-id="3"  data-id="response_10">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Multiple Filters">
+                                                <code class="is-highlighted">
+GET {{HOST}}/dropped/items/byproduct?filters=[{"field":"created_at","operator":">","value":"2024-02-10"},{"field":"sku","operator":"=","value":"0005"}]</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Multiple Filters">
+                                                    <code class="is-highlighted">
+{
+    "total_count": 1,
+    "items": [
+        {
+            "sku": "0005",
+            "total": 1
+        }
+    ]
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="formatted-requests hide" data-request-id="3"  data-id="response_11">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Order By Total">
+                                                <code class="is-highlighted">
+GET {{HOST}}/dropped/items/byproduct?order_by=total&order=desc</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Order By Total">
+                                                    <code class="is-highlighted">
+{
+    "total_count": 192,
+    "items": [
+        {
+            "sku": "et",
+            "total": 8686
+        },
+        {
+            "sku": "qui",
+            "total": 4903
+        },
+        {
+            "sku": "aut",
+            "total": 4753
+        },
+        {
+            "sku": "ut",
+            "total": 4682
+        },
+        {
+            "sku": "est",
+            "total": 4056
+        },
+        {
+            "sku": "voluptatem",
+            "total": 3308
+        },
+        {
+            "sku": "quia",
+            "total": 3213
+        },
+        {
+            "sku": "rerum",
+            "total": 2477
+        },
+        {
+            "sku": "voluptas",
+            "total": 2442
+        },
+        {
+            "sku": "non",
+            "total": 2428
+        },
+        {
+            "sku": "sit",
+            "total": 2416
+        },
+        {
+            "sku": "consequatur",
+            "total": 2399
+        },
+        {
+            "sku": "sed",
+            "total": 2373
+        },
+        {
+            "sku": "omnis",
+            "total": 2367
+        },
+        {
+            "sku": "dolor",
+            "total": 1659
+        },
+        {
+            "sku": "vel",
+            "total": 1653
+        },
+        {
+            "sku": "id",
+            "total": 1648
+        },
+        {
+            "sku": "sint",
+            "total": 1634
+        },
+        {
+            "sku": "nihil",
+            "total": 1632
+        },
+        {
+            "sku": "enim",
+            "total": 1630
+        },
+        {
+            "sku": "molestiae",
+            "total": 1627
+        },
+        {
+            "sku": "ea",
+            "total": 1623
+        },
+        {
+            "sku": "dolorem",
+            "total": 1618
+        },
+        {
+            "sku": "in",
+            "total": 1612
+        },
+        {
+            "sku": "sunt",
+            "total": 1611
+        },
+        {
+            "sku": "quo",
+            "total": 1590
+        },
+        {
+            "sku": "autem",
+            "total": 1579
+        },
+        {
+            "sku": "dolores",
+            "total": 1577
+        },
+        {
+            "sku": "quis",
+            "total": 1575
+        },
+        {
+            "sku": "velit",
+            "total": 1567
+        },
+        {
+            "sku": "eos",
+            "total": 1558
+        },
+        {
+            "sku": "eum",
+            "total": 1556
+        },
+        {
+            "sku": "aspernatur",
+            "total": 892
+        },
+        {
+            "sku": "fuga",
+            "total": 884
+        },
+        {
+            "sku": "corporis",
+            "total": 867
+        },
+        {
+            "sku": "sequi",
+            "total": 866
+        },
+        {
+            "sku": "excepturi",
+            "total": 856
+        },
+        {
+            "sku": "deserunt",
+            "total": 856
+        },
+        {
+            "sku": "veritatis",
+            "total": 854
+        },
+        {
+            "sku": "odio",
+            "total": 853
+        },
+        {
+            "sku": "a",
+            "total": 852
+        },
+        {
+            "sku": "esse",
+            "total": 849
+        },
+        {
+            "sku": "odit",
+            "total": 849
+        },
+        {
+            "sku": "porro",
+            "total": 847
+        },
+        {
+            "sku": "numquam",
+            "total": 847
+        },
+        {
+            "sku": "aliquid",
+            "total": 844
+        },
+        {
+            "sku": "veniam",
+            "total": 844
+        },
+        {
+            "sku": "repellendus",
+            "total": 843
+        },
+        {
+            "sku": "optio",
+            "total": 842
+        },
+        {
+            "sku": "eligendi",
+            "total": 841
+        },
+        {
+            "sku": "doloremque",
+            "total": 839
+        },
+        {
+            "sku": "at",
+            "total": 839
+        },
+        {
+            "sku": "iure",
+            "total": 838
+        },
+        {
+            "sku": "aperiam",
+            "total": 838
+        },
+        {
+            "sku": "repudiandae",
+            "total": 837
+        },
+        {
+            "sku": "vero",
+            "total": 836
+        },
+        {
+            "sku": "vitae",
+            "total": 834
+        },
+        {
+            "sku": "hic",
+            "total": 833
+        },
+        {
+            "sku": "illum",
+            "total": 833
+        },
+        {
+            "sku": "placeat",
+            "total": 831
+        },
+        {
+            "sku": "adipisci",
+            "total": 831
+        },
+        {
+            "sku": "fugit",
+            "total": 831
+        },
+        {
+            "sku": "pariatur",
+            "total": 830
+        },
+        {
+            "sku": "quaerat",
+            "total": 827
+        },
+        {
+            "sku": "reiciendis",
+            "total": 826
+        },
+        {
+            "sku": "assumenda",
+            "total": 826
+        },
+        {
+            "sku": "atque",
+            "total": 826
+        },
+        {
+            "sku": "eveniet",
+            "total": 825
+        },
+        {
+            "sku": "praesentium",
+            "total": 825
+        },
+        {
+            "sku": "nisi",
+            "total": 824
+        },
+        {
+            "sku": "ratione",
+            "total": 823
+        },
+        {
+            "sku": "officiis",
+            "total": 822
+        },
+        {
+            "sku": "quisquam",
+            "total": 822
+        },
+        {
+            "sku": "doloribus",
+            "total": 821
+        },
+        {
+            "sku": "alias",
+            "total": 820
+        },
+        {
+            "sku": "aliquam",
+            "total": 820
+        },
+        {
+            "sku": "cum",
+            "total": 819
+        },
+        {
+            "sku": "cupiditate",
+            "total": 817
+        },
+        {
+            "sku": "iste",
+            "total": 817
+        },
+        {
+            "sku": "quam",
+            "total": 816
+        },
+        {
+            "sku": "error",
+            "total": 814
+        },
+        {
+            "sku": "magnam",
+            "total": 813
+        },
+        {
+            "sku": "minima",
+            "total": 813
+        },
+        {
+            "sku": "explicabo",
+            "total": 812
+        },
+        {
+            "sku": "quibusdam",
+            "total": 811
+        },
+        {
+            "sku": "quidem",
+            "total": 811
+        },
+        {
+            "sku": "earum",
+            "total": 811
+        },
+        {
+            "sku": "nobis",
+            "total": 810
+        },
+        {
+            "sku": "blanditiis",
+            "total": 809
+        },
+        {
+            "sku": "laboriosam",
+            "total": 809
+        },
+        {
+            "sku": "laudantium",
+            "total": 809
+        },
+        {
+            "sku": "dolorum",
+            "total": 809
+        },
+        {
+            "sku": "quod",
+            "total": 808
+        },
+        {
+            "sku": "dicta",
+            "total": 807
+        },
+        {
+            "sku": "necessitatibus",
+            "total": 807
+        },
+        {
+            "sku": "dignissimos",
+            "total": 806
+        },
+        {
+            "sku": "amet",
+            "total": 806
+        },
+        {
+            "sku": "animi",
+            "total": 805
+        },
+        {
+            "sku": "labore",
+            "total": 804
+        },
+        {
+            "sku": "culpa",
+            "total": 804
+        },
+        {
+            "sku": "similique",
+            "total": 804
+        },
+        {
+            "sku": "impedit",
+            "total": 804
+        },
+        {
+            "sku": "exercitationem",
+            "total": 803
+        },
+        {
+            "sku": "nemo",
+            "total": 803
+        },
+        {
+            "sku": "natus",
+            "total": 802
+        },
+        {
+            "sku": "soluta",
+            "total": 801
+        },
+        {
+            "sku": "unde",
+            "total": 801
+        },
+        {
+            "sku": "asperiores",
+            "total": 801
+        },
+        {
+            "sku": "inventore",
+            "total": 801
+        },
+        {
+            "sku": "quos",
+            "total": 801
+        },
+        {
+            "sku": "officia",
+            "total": 798
+        },
+        {
+            "sku": "deleniti",
+            "total": 797
+        },
+        {
+            "sku": "tempore",
+            "total": 797
+        },
+        {
+            "sku": "nulla",
+            "total": 797
+        },
+        {
+            "sku": "beatae",
+            "total": 796
+        },
+        {
+            "sku": "debitis",
+            "total": 796
+        },
+        {
+            "sku": "facere",
+            "total": 796
+        },
+        {
+            "sku": "facilis",
+            "total": 796
+        },
+        {
+            "sku": "provident",
+            "total": 796
+        },
+        {
+            "sku": "consequuntur",
+            "total": 795
+        },
+        {
+            "sku": "possimus",
+            "total": 795
+        },
+        {
+            "sku": "quas",
+            "total": 795
+        },
+        {
+            "sku": "nostrum",
+            "total": 795
+        },
+        {
+            "sku": "repellat",
+            "total": 794
+        },
+        {
+            "sku": "ipsa",
+            "total": 791
+        },
+        {
+            "sku": "nam",
+            "total": 790
+        },
+        {
+            "sku": "tenetur",
+            "total": 790
+        },
+        {
+            "sku": "neque",
+            "total": 790
+        },
+        {
+            "sku": "eaque",
+            "total": 790
+        },
+        {
+            "sku": "eius",
+            "total": 790
+        },
+        {
+            "sku": "voluptates",
+            "total": 789
+        },
+        {
+            "sku": "commodi",
+            "total": 788
+        },
+        {
+            "sku": "quae",
+            "total": 788
+        },
+        {
+            "sku": "incidunt",
+            "total": 788
+        },
+        {
+            "sku": "voluptatum",
+            "total": 787
+        },
+        {
+            "sku": "perferendis",
+            "total": 787
+        },
+        {
+            "sku": "architecto",
+            "total": 786
+        },
+        {
+            "sku": "voluptatibus",
+            "total": 785
+        },
+        {
+            "sku": "magni",
+            "total": 785
+        },
+        {
+            "sku": "cumque",
+            "total": 785
+        },
+        {
+            "sku": "ipsum",
+            "total": 785
+        },
+        {
+            "sku": "saepe",
+            "total": 784
+        },
+        {
+            "sku": "modi",
+            "total": 784
+        },
+        {
+            "sku": "mollitia",
+            "total": 784
+        },
+        {
+            "sku": "distinctio",
+            "total": 784
+        },
+        {
+            "sku": "sapiente",
+            "total": 783
+        },
+        {
+            "sku": "accusantium",
+            "total": 783
+        },
+        {
+            "sku": "ullam",
+            "total": 783
+        },
+        {
+            "sku": "consectetur",
+            "total": 782
+        },
+        {
+            "sku": "harum",
+            "total": 782
+        },
+        {
+            "sku": "temporibus",
+            "total": 782
+        },
+        {
+            "sku": "fugiat",
+            "total": 780
+        },
+        {
+            "sku": "dolore",
+            "total": 780
+        },
+        {
+            "sku": "iusto",
+            "total": 779
+        },
+        {
+            "sku": "ad",
+            "total": 777
+        },
+        {
+            "sku": "nesciunt",
+            "total": 775
+        },
+        {
+            "sku": "libero",
+            "total": 774
+        },
+        {
+            "sku": "ex",
+            "total": 773
+        },
+        {
+            "sku": "maiores",
+            "total": 773
+        },
+        {
+            "sku": "tempora",
+            "total": 773
+        },
+        {
+            "sku": "corrupti",
+            "total": 772
+        },
+        {
+            "sku": "suscipit",
+            "total": 772
+        },
+        {
+            "sku": "reprehenderit",
+            "total": 771
+        },
+        {
+            "sku": "perspiciatis",
+            "total": 771
+        },
+        {
+            "sku": "expedita",
+            "total": 771
+        },
+        {
+            "sku": "voluptate",
+            "total": 769
+        },
+        {
+            "sku": "ipsam",
+            "total": 769
+        },
+        {
+            "sku": "accusamus",
+            "total": 768
+        },
+        {
+            "sku": "ab",
+            "total": 767
+        },
+        {
+            "sku": "rem",
+            "total": 766
+        },
+        {
+            "sku": "totam",
+            "total": 766
+        },
+        {
+            "sku": "maxime",
+            "total": 765
+        },
+        {
+            "sku": "illo",
+            "total": 765
+        },
+        {
+            "sku": "itaque",
+            "total": 764
+        },
+        {
+            "sku": "minus",
+            "total": 763
+        },
+        {
+            "sku": "recusandae",
+            "total": 760
+        },
+        {
+            "sku": "molestias",
+            "total": 759
+        },
+        {
+            "sku": "quasi",
+            "total": 758
+        },
+        {
+            "sku": "ducimus",
+            "total": 757
+        },
+        {
+            "sku": "laborum",
+            "total": 754
+        },
+        {
+            "sku": "delectus",
+            "total": 753
+        },
+        {
+            "sku": "occaecati",
+            "total": 727
+        },
+        {
+            "sku": "0001",
+            "total": 1
+        },
+        {
+            "sku": "0002",
+            "total": 1
+        },
+        {
+            "sku": "0003",
+            "total": 1
+        },
+        {
+            "sku": "0004",
+            "total": 1
+        },
+        {
+            "sku": "0005",
+            "total": 1
+        },
+        {
+            "sku": "0006",
+            "total": 1
+        },
+        {
+            "sku": "0007",
+            "total": 1
+        },
+        {
+            "sku": "0008",
+            "total": 1
+        },
+        {
+            "sku": "0009",
+            "total": 1
+        },
+        {
+            "sku": "0010",
+            "total": 1
+        }
+    ]
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row row-no-padding row-eq-height">
+                            <div class="col-md-6 col-xs-12 section">
+                                <div class="api-information" id="4">
+                                     <div class="heading">
+                                        <div class="name">
+                                            <span class="GET method" >GET</span>
+                                            By Customer <span class="lock-icon"></span>
+                                        </div>
+                                     </div>
+                                    <div class="url">{{HOST}}/dropped/items/bycustomer</div>
+                                    
+                                    <div class="description request-description">
+                                        <p><h3 id="summary">Summary</h3>
+<p>Route for fetching items that are grouped by customer and product.</p>
+<p>The items provide information on how many times the customer dropped a specific item before checkout.</p></p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-xs-12 examples">
+                                <div class="sample-request">
+                                    <div class="heading">
+                                        <span>Example Request</span>
+                                    </div>
+                                    <div class="responses-index">
+                                        <div class="dropdown response-name">
+                                            <button class="btn dropdown-toggle  responses-dropdown truncate" type="button" id="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                              <span id="selected" class="response-name-label">Order By</span>
+                                                <span class="caret"></span>
+
+                                            </button>
+
+                                            <ul class="dropdown-menu" aria-labelledby="f678f251-1750-4e3a-b5d8-05b4c6b0fb37_dropdown">
+                                                <li class="truncate" data-request-info="4" data-response-info="response_12">Order By</li>
+                                                <li class="truncate" data-request-info="4" data-response-info="response_13">Filter by Customer Id</li>
+                                                <li class="truncate" data-request-info="4" data-response-info="response_14">Filter By Date</li>
+                                                <li class="truncate" data-request-info="4" data-response-info="response_15">Multiple Filters</li>
+                                                <li class="truncate" data-request-info="4" data-response-info="response_16">Order by Total</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="formatted-requests " data-request-id="4"  data-id="response_12">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Order By">
+                                                <code class="is-highlighted">
+GET http://localhost:8041/dropped/items/bycustomer?order_by=total&order=desc&limit=11</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Order By">
+                                                    <code class="is-highlighted">
+{
+    "total_count": 110380,
+    "items": [
+        {
+            "sku": "et",
+            "customer_id": "636",
+            "total": 21
+        },
+        {
+            "sku": "et",
+            "customer_id": "361",
+            "total": 18
+        },
+        {
+            "sku": "et",
+            "customer_id": "619",
+            "total": 18
+        },
+        {
+            "sku": "et",
+            "customer_id": "199",
+            "total": 17
+        },
+        {
+            "sku": "et",
+            "customer_id": "297",
+            "total": 17
+        },
+        {
+            "sku": "et",
+            "customer_id": "554",
+            "total": 17
+        },
+        {
+            "sku": "et",
+            "customer_id": "652",
+            "total": 17
+        },
+        {
+            "sku": "et",
+            "customer_id": "790",
+            "total": 17
+        },
+        {
+            "sku": "et",
+            "customer_id": "122",
+            "total": 16
+        },
+        {
+            "sku": "et",
+            "customer_id": "276",
+            "total": 16
+        },
+        {
+            "sku": "et",
+            "customer_id": "350",
+            "total": 16
+        }
+    ]
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="formatted-requests hide" data-request-id="4"  data-id="response_13">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Filter by Customer Id">
+                                                <code class="is-highlighted">
+GET {{HOST}}/dropped/items/bycustomer?filters=[{"field": "customer_id","operator": "=","value": "2"}]</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Filter by Customer Id">
+                                                    <code class="is-highlighted">
+{
+    "total_count": 106,
+    "items": [
+        {
+            "sku": "a",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "ab",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "accusamus",
+            "customer_id": "1",
+            "total": 4
+        },
+        {
+            "sku": "adipisci",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "amet",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "aperiam",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "asperiores",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "aspernatur",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "at",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "atque",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "aut",
+            "customer_id": "1",
+            "total": 5
+        },
+        {
+            "sku": "autem",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "commodi",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "consectetur",
+            "customer_id": "1",
+            "total": 4
+        },
+        {
+            "sku": "consequatur",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "corrupti",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "culpa",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "deleniti",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "dicta",
+            "customer_id": "1",
+            "total": 3
+        },
+        {
+            "sku": "dignissimos",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "doloremque",
+            "customer_id": "1",
+            "total": 4
+        },
+        {
+            "sku": "dolores",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "dolorum",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "ducimus",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "ea",
+            "customer_id": "1",
+            "total": 3
+        },
+        {
+            "sku": "earum",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "eius",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "enim",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "eos",
+            "customer_id": "1",
+            "total": 4
+        },
+        {
+            "sku": "error",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "esse",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "est",
+            "customer_id": "1",
+            "total": 6
+        },
+        {
+            "sku": "et",
+            "customer_id": "1",
+            "total": 4
+        },
+        {
+            "sku": "eum",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "ex",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "expedita",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "facilis",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "fuga",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "fugiat",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "harum",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "id",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "illo",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "illum",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "impedit",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "in",
+            "customer_id": "1",
+            "total": 3
+        },
+        {
+            "sku": "incidunt",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "inventore",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "ipsa",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "ipsam",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "iste",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "labore",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "laudantium",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "libero",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "magnam",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "maiores",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "maxime",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "minima",
+            "customer_id": "1",
+            "total": 3
+        },
+        {
+            "sku": "modi",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "molestiae",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "molestias",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "mollitia",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "nam",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "natus",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "nihil",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "non",
+            "customer_id": "1",
+            "total": 6
+        },
+        {
+            "sku": "nulla",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "officia",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "omnis",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "optio",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "pariatur",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "porro",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "possimus",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "praesentium",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "quae",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "quaerat",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "quas",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "qui",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "quia",
+            "customer_id": "1",
+            "total": 6
+        },
+        {
+            "sku": "quibusdam",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "quo",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "quos",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "ratione",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "recusandae",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "reprehenderit",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "rerum",
+            "customer_id": "1",
+            "total": 3
+        },
+        {
+            "sku": "saepe",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "sapiente",
+            "customer_id": "1",
+            "total": 3
+        },
+        {
+            "sku": "sed",
+            "customer_id": "1",
+            "total": 4
+        },
+        {
+            "sku": "sequi",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "sint",
+            "customer_id": "1",
+            "total": 3
+        },
+        {
+            "sku": "sit",
+            "customer_id": "1",
+            "total": 3
+        },
+        {
+            "sku": "soluta",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "sunt",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "tempora",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "tempore",
+            "customer_id": "1",
+            "total": 3
+        },
+        {
+            "sku": "unde",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "ut",
+            "customer_id": "1",
+            "total": 7
+        },
+        {
+            "sku": "vel",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "velit",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "veniam",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "vero",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "vitae",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "voluptas",
+            "customer_id": "1",
+            "total": 4
+        },
+        {
+            "sku": "voluptatem",
+            "customer_id": "1",
+            "total": 6
+        },
+        {
+            "sku": "voluptates",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "voluptatum",
+            "customer_id": "1",
+            "total": 1
+        }
+    ]
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="formatted-requests hide" data-request-id="4"  data-id="response_14">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Filter By Date">
+                                                <code class="is-highlighted">
+GET {{HOST}}/dropped/items/bycustomer?filters=[{"operator":">","field":"created_at","value":"2024-02-22"}]</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Filter By Date">
+                                                    <code class="is-highlighted">
+{
+    "total_count": 110380,
+    "items": [
+        {
+            "sku": "0001",
+            "customer_id": "211",
+            "total": 1
+        },
+        {
+            "sku": "0002",
+            "customer_id": "737",
+            "total": 1
+        },
+        {
+            "sku": "0003",
+            "customer_id": "905",
+            "total": 1
+        },
+        {
+            "sku": "0004",
+            "customer_id": "13",
+            "total": 1
+        },
+        {
+            "sku": "0005",
+            "customer_id": "459",
+            "total": 1
+        },
+        {
+            "sku": "0006",
+            "customer_id": "469",
+            "total": 1
+        },
+        {
+            "sku": "0007",
+            "customer_id": "747",
+            "total": 1
+        },
+        {
+            "sku": "0008",
+            "customer_id": "868",
+            "total": 1
+        },
+        {
+            "sku": "0009",
+            "customer_id": "354",
+            "total": 1
+        },
+        {
+            "sku": "0010",
+            "customer_id": "791",
+            "total": 1
+        },
+        {
+            "sku": "a",
+            "customer_id": "1",
+            "total": 2
+        }
+    ]
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="formatted-requests hide" data-request-id="4"  data-id="response_15">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Multiple Filters">
+                                                <code class="is-highlighted">
+GET {{HOST}}/dropped/items/bycustomer?filters=[{"field":"created_at","operator":">","value":"2024-02-21"},{"field":"customer_id","operator":"=","value":"1"}]</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Multiple Filters">
+                                                    <code class="is-highlighted">
+{
+    "total_count": 106,
+    "items": [
+        {
+            "sku": "a",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "ab",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "accusamus",
+            "customer_id": "1",
+            "total": 4
+        },
+        {
+            "sku": "adipisci",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "amet",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "aperiam",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "asperiores",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "aspernatur",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "at",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "atque",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "aut",
+            "customer_id": "1",
+            "total": 5
+        },
+        {
+            "sku": "autem",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "commodi",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "consectetur",
+            "customer_id": "1",
+            "total": 4
+        },
+        {
+            "sku": "consequatur",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "corrupti",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "culpa",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "deleniti",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "dicta",
+            "customer_id": "1",
+            "total": 3
+        },
+        {
+            "sku": "dignissimos",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "doloremque",
+            "customer_id": "1",
+            "total": 4
+        },
+        {
+            "sku": "dolores",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "dolorum",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "ducimus",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "ea",
+            "customer_id": "1",
+            "total": 3
+        },
+        {
+            "sku": "earum",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "eius",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "enim",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "eos",
+            "customer_id": "1",
+            "total": 4
+        },
+        {
+            "sku": "error",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "esse",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "est",
+            "customer_id": "1",
+            "total": 6
+        },
+        {
+            "sku": "et",
+            "customer_id": "1",
+            "total": 4
+        },
+        {
+            "sku": "eum",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "ex",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "expedita",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "facilis",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "fuga",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "fugiat",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "harum",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "id",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "illo",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "illum",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "impedit",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "in",
+            "customer_id": "1",
+            "total": 3
+        },
+        {
+            "sku": "incidunt",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "inventore",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "ipsa",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "ipsam",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "iste",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "labore",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "laudantium",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "libero",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "magnam",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "maiores",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "maxime",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "minima",
+            "customer_id": "1",
+            "total": 3
+        },
+        {
+            "sku": "modi",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "molestiae",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "molestias",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "mollitia",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "nam",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "natus",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "nihil",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "non",
+            "customer_id": "1",
+            "total": 6
+        },
+        {
+            "sku": "nulla",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "officia",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "omnis",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "optio",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "pariatur",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "porro",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "possimus",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "praesentium",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "quae",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "quaerat",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "quas",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "qui",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "quia",
+            "customer_id": "1",
+            "total": 6
+        },
+        {
+            "sku": "quibusdam",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "quo",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "quos",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "ratione",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "recusandae",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "reprehenderit",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "rerum",
+            "customer_id": "1",
+            "total": 3
+        },
+        {
+            "sku": "saepe",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "sapiente",
+            "customer_id": "1",
+            "total": 3
+        },
+        {
+            "sku": "sed",
+            "customer_id": "1",
+            "total": 4
+        },
+        {
+            "sku": "sequi",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "sint",
+            "customer_id": "1",
+            "total": 3
+        },
+        {
+            "sku": "sit",
+            "customer_id": "1",
+            "total": 3
+        },
+        {
+            "sku": "soluta",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "sunt",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "tempora",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "tempore",
+            "customer_id": "1",
+            "total": 3
+        },
+        {
+            "sku": "unde",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "ut",
+            "customer_id": "1",
+            "total": 7
+        },
+        {
+            "sku": "vel",
+            "customer_id": "1",
+            "total": 2
+        },
+        {
+            "sku": "velit",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "veniam",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "vero",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "vitae",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "voluptas",
+            "customer_id": "1",
+            "total": 4
+        },
+        {
+            "sku": "voluptatem",
+            "customer_id": "1",
+            "total": 6
+        },
+        {
+            "sku": "voluptates",
+            "customer_id": "1",
+            "total": 1
+        },
+        {
+            "sku": "voluptatum",
+            "customer_id": "1",
+            "total": 1
+        }
+    ]
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                <div class="formatted-requests hide" data-request-id="4"  data-id="response_16">
+                                    <div class="request code-snippet">
+                                        <div>
+                                            <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Order by Total">
+                                                <code class="is-highlighted">
+GET {{HOST}}/dropped/items/bycustomer?order_by=total&order=desc</code>
+                                            </pre>
+                                        </div>
+                                    </div>
+                                    <div class="sample-response">
+                                        <div class="heading">
+                                            <span>Example Response</span>
+                                        </div>
+                                        <div class="responses-index">
+                                            <div class="response-status">
+                                                <span>200 - OK</span>
+                                            </div>
+                                        </div>
+                                        <div class="responses code-snippet">
+                                            <div>
+                                                <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Order by Total">
+                                                    <code class="is-highlighted">
+{
+    "total_count": 110380,
+    "items": [
+        {
+            "sku": "et",
+            "customer_id": "636",
+            "total": 21
+        },
+        {
+            "sku": "et",
+            "customer_id": "361",
+            "total": 18
+        },
+        {
+            "sku": "et",
+            "customer_id": "619",
+            "total": 18
+        },
+        {
+            "sku": "et",
+            "customer_id": "199",
+            "total": 17
+        },
+        {
+            "sku": "et",
+            "customer_id": "297",
+            "total": 17
+        },
+        {
+            "sku": "et",
+            "customer_id": "554",
+            "total": 17
+        },
+        {
+            "sku": "et",
+            "customer_id": "652",
+            "total": 17
+        },
+        {
+            "sku": "et",
+            "customer_id": "790",
+            "total": 17
+        },
+        {
+            "sku": "et",
+            "customer_id": "122",
+            "total": 16
+        },
+        {
+            "sku": "et",
+            "customer_id": "276",
+            "total": 16
+        },
+        {
+            "sku": "et",
+            "customer_id": "350",
+            "total": 16
+        }
+    ]
+}</code>
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </main>
+        <!-- page-content" -->
+    </div>
+    <!-- page-wrapper -->
+    <!-- using online scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+    </script>
+    <script src="https://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/bootstrap-treeview.min.js"></script>
+    <script src="js/main.min.js"></script>
+    <script type="application/javascript">
+        var data = [{'text': 'Item', 'nodes': [{'text': 'Get item', 'href': '#1', 'method': 'GET'}], 'icon': 'fas fa-folder', 'selectable': 'false'}, {'text': 'Items', 'nodes': [{'text': 'Get Items', 'href': '#2', 'method': 'GET'}, {'text': 'By Product', 'href': '#3', 'method': 'GET'}, {'text': 'By Customer', 'href': '#4', 'method': 'GET'}], 'icon': 'fas fa-folder', 'selectable': 'false'}]
+        $('#tree').treeview({
+            data: data,
+            levels: 10,
+            expandIcon: 'fas fa-caret-right',
+            collapseIcon: 'fas fa-caret-down',
+            enableLinks: true,
+            showIcon: true,
+            showMethod: true
+        });
+    </script>
+
+</body>
+
+</html>

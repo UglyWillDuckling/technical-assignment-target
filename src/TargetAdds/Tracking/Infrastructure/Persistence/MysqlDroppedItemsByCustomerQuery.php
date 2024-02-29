@@ -29,6 +29,10 @@ class MysqlDroppedItemsByCustomerQuery extends AggregateQuery implements Dropped
         return parent::matching($criteria);
     }
 
+    protected function alias(): string {
+        return 'd';
+    }
+
     #[Override] protected function select(): string {
         return 'd.sku, d.customer_id, COUNT(d.sku) as total';
     }

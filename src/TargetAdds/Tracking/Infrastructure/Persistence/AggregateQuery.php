@@ -2,6 +2,7 @@
 
 namespace Acme\TargetAdds\Tracking\Infrastructure\Persistence;
 
+use Acme\Shared\Domain\Collection;
 use Acme\Shared\Domain\Criteria\Criteria;
 use Acme\Shared\Domain\Criteria\Filter;
 use Acme\Shared\Domain\Criteria\Filters;
@@ -21,7 +22,7 @@ abstract class AggregateQuery
     {
         $qb = $this->queryBuilder();
 
-        $qb->from(DroppedItem::class, 'd');
+        $qb->from(DroppedItem::class, $this->alias());
         $qb->select($this->select());
         $qb->groupBy($this->groupBy());
 
@@ -34,7 +35,9 @@ abstract class AggregateQuery
 
     abstract protected function groupBy(): string;
 
-    abstract protected function createResultCollection(Query $query);
+    abstract protected function alias(): string;
+
+    abstract protected function createResultCollection(Query $query): Collection;
 
     private function applyCriteria(QueryBuilder $qb, Criteria $criteria): void
     {

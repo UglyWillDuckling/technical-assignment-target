@@ -3,7 +3,6 @@
 namespace Acme\TargetAdds\Tracking\Infrastructure\Persistence;
 
 use Acme\Shared\Domain\Criteria\Criteria;
-use Acme\TargetAdds\Tracking\Domain\DroppedItem;
 use Acme\TargetAdds\Tracking\Domain\DroppedItem\DroppedItemsByProduct;
 use Acme\TargetAdds\Tracking\Domain\DroppedItem\DroppedItemsByProductCollection;
 use Acme\TargetAdds\Tracking\Domain\DroppedItem\DroppedItemsByProductQuery;
@@ -28,24 +27,27 @@ class MysqlDroppedItemsByProductQuery extends AggregateQuery implements DroppedI
         return parent::matching($criteria);
     }
 
-    #[Override] protected function select(): string
-    {
-        return 'd.sku, COUNT(d.sku) as total';
+    #[Override] protected function alias(): string {
+        return 'd';
     }
 
-    #[Override] protected function groupBy(): string
-    {
-        return 'd.sku';
+    #[Override] protected function select(): string {
+        return $this->alias().'.sku, COUNT('.$this->alias().'.sku) as total';
     }
 
-    protected function createResultCollection(Query $query)
+    #[Override] protected function groupBy(): string {
+        return $this->alias().'.sku';
+    }
+
+    protected function createResultCollection(Query $query): DroppedItemsByProductCollection
     {
         $items = $query->getResult();
         $totalCount = (new Paginator($query))->count();
 
-        return new DroppedItem\DroppedItemsByProductCollection(
+        return new DroppedItemsByProductCollection(
             map(fn (array $row) => new DroppedItemsByProduct($row['sku'], (int)$row['total']), $items),
-            $totalCount);
+            $totalCount
+        );
     }
 }
 

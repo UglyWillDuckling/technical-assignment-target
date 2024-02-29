@@ -9,5 +9,10 @@
     <field name="customer_id" type="string" column="customer_id" length="36" />
     <field name="sku" type="string" column="sku" length="255" />
     <field name="created_at" type="date" column="created_at" />
+      <indexes>
+          <index name="sku" columns="sku"/>
+          <index name="sku-customer_id" columns="sku,customer_id"/>
+          <index name="created_at" columns="created_at"/>
+      </indexes>
   </entity>
 </doctrine-mapping>

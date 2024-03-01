@@ -5,6 +5,11 @@ services:
         autoconfigure: true
         autowire: true
 
+    exception.listener:
+      class: Acme\Apps\TargetAdds\Front\EventListener\ExceptionListener
+      tags:
+        - { name: kernel.event_listener, event: kernel.exception }
+
     # Configure
     _instanceof:
         Acme\Shared\Domain\Bus\Event\DomainEventSubscriber:

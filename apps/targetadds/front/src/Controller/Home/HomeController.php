@@ -28,9 +28,6 @@ final class HomeController extends WebController
 
 	public function __invoke(Request $request): Response
 	{
-		var_dump($this->repo->searchAll());
-		die;
-
 		return $this->render('pages/home.html.twig', [
 			'title' => 'Welcome',
 			'description' => 'Home Page',

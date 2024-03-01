@@ -17,8 +17,10 @@ readonly abstract class DroppedItemsController
     {
         $items = $this->getItems($this->createCriteria($request));
 
-        return new JsonResponse(
-            array_merge(['total_count' => $items->countTotal()], ['items' => map($this->itemsMapping(), $items)]),
+        return new JsonResponse([
+                'total_count' => $items->countTotal(),
+                'items' => map($this->itemsMapping(), $items)
+            ],
             200,
             ['Access-Control-Allow-Origin' => '*']
         );

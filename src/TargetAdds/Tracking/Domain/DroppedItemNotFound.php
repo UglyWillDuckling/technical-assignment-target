@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Acme\TargetAdds\Tracking\Domain;
 
-use Exception;
+use DomainException;
 
-final class DroppedItemNotFound extends Exception {
+final class DroppedItemNotFound extends DomainException {
     public function __construct(private readonly string $id) {
-        parent::__construct();
+        parent::__construct($this->errorMessage());
     }
 
     public function errorCode(): string
@@ -16,7 +16,7 @@ final class DroppedItemNotFound extends Exception {
         return 'dropped-item_not_exist';
     }
 
-    protected function errorMessage(): string
+    private function errorMessage(): string
     {
         return sprintf('The dropped item <%s> does not exist', $this->id);
     }

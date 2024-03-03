@@ -14,3 +14,7 @@ You may find the API documentation in the `docs/api/` directory.
 
 The documents are in HTML format. To view them, simply open the `index.html` file in any web browser.
 
+## Misc
+
+The architecture of the project was based on [php-ddd-example](https://github.com/CodelyTV/php-ddd-example)
+

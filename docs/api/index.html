@@ -145,6 +145,7 @@ GET {{HOST}}/dropped/item/{{dropped_item_id}}</code>
             "timezone": "UTC"
         },
         "customer_id": "812",
+        "customer_email": "brianne.bashirian@bogisich.com",
         "sku": "fugit"
     }
 }</code>
@@ -223,103 +224,114 @@ GET {{HOST}}/dropped/items?filters=[{"operator":">","field":"created_at","value"
                                                 <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Filter By Date">
                                                     <code class="is-highlighted">
 {
-    "total_count": 200012,
+    "total_count": 200032,
     "items": [
         {
-            "sku": "fugit",
-            "customer_id": "812",
+            "sku": "fugiat",
+            "customer_id": "1281606",
+            "customer_email": "brianne.bashirian@bogisich.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "architecto",
-            "customer_id": "259",
+            "sku": "itaque",
+            "customer_id": "1990962",
+            "customer_email": "elouise.pagac@heidenreich.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "cum",
-            "customer_id": "607",
+            "sku": "veritatis",
+            "customer_id": "12016",
+            "customer_email": "cartwright.ana@armstrong.org",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "animi",
-            "customer_id": "593",
+            "sku": "officia",
+            "customer_id": "6509",
+            "customer_email": "mmiller@stanton.biz",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "pariatur",
-            "customer_id": "545",
+            "sku": "reprehenderit",
+            "customer_id": "31653520",
+            "customer_email": "ashlee.howell@hotmail.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "quae",
-            "customer_id": "671",
+            "sku": "odio",
+            "customer_id": "75",
+            "customer_email": "joseph.ruecker@hotmail.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "rerum",
-            "customer_id": "172",
+            "sku": "ratione",
+            "customer_id": "7",
+            "customer_email": "hintz.florian@gmail.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "eius",
-            "customer_id": "943",
+            "sku": "eveniet",
+            "customer_id": "19221",
+            "customer_email": "amina.metz@hotmail.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "rerum",
-            "customer_id": "807",
+            "sku": "perferendis",
+            "customer_id": "397164",
+            "customer_email": "jordy19@hotmail.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "sint",
-            "customer_id": "207",
+            "sku": "aut",
+            "customer_id": "1",
+            "customer_email": "sfay@jast.info",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "et",
-            "customer_id": "904",
+            "sku": "fuga",
+            "customer_id": "6",
+            "customer_email": "jerry16@pfeffer.net",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -337,7 +349,7 @@ GET {{HOST}}/dropped/items?filters=[{"operator":">","field":"created_at","value"
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Filter by Sku">
                                                 <code class="is-highlighted">
-GET {{HOST}}/dropped/items?filters=[ {"field": "sku","operator": ">","value": "0001"}]</code>
+GET {{HOST}}/dropped/items?filters=[ {"field": "sku","operator": "=","value": "0001"}]</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -355,103 +367,34 @@ GET {{HOST}}/dropped/items?filters=[ {"field": "sku","operator": ">","value": "0
                                                 <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Filter by Sku">
                                                     <code class="is-highlighted">
 {
-    "total_count": 200011,
+    "total_count": 3,
     "items": [
         {
-            "sku": "0002",
-            "customer_id": "737",
+            "sku": "0001",
+            "customer_id": "932",
+            "customer_email": "alexandrine.wilkinson@thompson.com",
             "created_at": {
-                "date": "2024-02-29 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "0003",
-            "customer_id": "905",
+            "sku": "0001",
+            "customer_id": "766",
+            "customer_email": "domingo15@gmail.com",
             "created_at": {
-                "date": "2024-02-29 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "0004",
-            "customer_id": "13",
+            "sku": "0001",
+            "customer_id": "447",
+            "customer_email": "noel59@gmail.com",
             "created_at": {
-                "date": "2024-02-29 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "sku": "0005",
-            "customer_id": "459",
-            "created_at": {
-                "date": "2024-02-29 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "sku": "0006",
-            "customer_id": "469",
-            "created_at": {
-                "date": "2024-02-29 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "sku": "0007",
-            "customer_id": "747",
-            "created_at": {
-                "date": "2024-02-29 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "sku": "0008",
-            "customer_id": "868",
-            "created_at": {
-                "date": "2024-02-29 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "sku": "0009",
-            "customer_id": "354",
-            "created_at": {
-                "date": "2024-02-29 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "sku": "0010",
-            "customer_id": "791",
-            "created_at": {
-                "date": "2024-02-29 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "sku": "a",
-            "customer_id": "24",
-            "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "sku": "a",
-            "customer_id": "959",
-            "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -469,7 +412,7 @@ GET {{HOST}}/dropped/items?filters=[ {"field": "sku","operator": ">","value": "0
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Filter By Customer Id">
                                                 <code class="is-highlighted">
-GET {{HOST}}/dropped/items?filters=[ {"field": "customer_id","operator": ">","value": "1"}]</code>
+GET {{HOST}}/dropped/items?filters=[ {"field": "customer_email","operator": "=","value": "sfay@jast.info"}]</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -487,103 +430,14 @@ GET {{HOST}}/dropped/items?filters=[ {"field": "customer_id","operator": ">","va
                                                 <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Filter By Customer Id">
                                                     <code class="is-highlighted">
 {
-    "total_count": 199815,
+    "total_count": 1,
     "items": [
         {
-            "sku": "fugit",
-            "customer_id": "812",
+            "sku": "aut",
+            "customer_id": "1",
+            "customer_email": "sfay@jast.info",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "sku": "architecto",
-            "customer_id": "259",
-            "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "sku": "cum",
-            "customer_id": "607",
-            "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "sku": "animi",
-            "customer_id": "593",
-            "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "sku": "pariatur",
-            "customer_id": "545",
-            "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "sku": "quae",
-            "customer_id": "671",
-            "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "sku": "rerum",
-            "customer_id": "172",
-            "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "sku": "eius",
-            "customer_id": "943",
-            "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "sku": "rerum",
-            "customer_id": "807",
-            "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "sku": "sint",
-            "customer_id": "207",
-            "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "UTC"
-            }
-        },
-        {
-            "sku": "et",
-            "customer_id": "904",
-            "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -619,13 +473,34 @@ GET {{HOST}}/dropped/items?filters=[{"field":"created_at","operator":">","value"
                                                 <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Multiple Filters">
                                                     <code class="is-highlighted">
 {
-    "total_count": 1,
+    "total_count": 3,
     "items": [
         {
             "sku": "0005",
-            "customer_id": "459",
+            "customer_id": "626",
+            "customer_email": "dkuvalis@gmail.com",
             "created_at": {
-                "date": "2024-02-29 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "0005",
+            "customer_id": "735",
+            "customer_email": "gottlieb.waldo@yahoo.com",
+            "created_at": {
+                "date": "2024-03-03 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "UTC"
+            }
+        },
+        {
+            "sku": "0005",
+            "customer_id": "113",
+            "customer_email": "kuhlman.ivah@vandervort.biz",
+            "created_at": {
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -661,103 +536,114 @@ GET {{HOST}}/dropped/items?order_by=created_at&order=asc&limit=11</code>
                                                 <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Order By">
                                                     <code class="is-highlighted">
 {
-    "total_count": 200012,
+    "total_count": 200032,
     "items": [
         {
-            "sku": "fugit",
-            "customer_id": "812",
+            "sku": "fugiat",
+            "customer_id": "1281606",
+            "customer_email": "brianne.bashirian@bogisich.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "architecto",
-            "customer_id": "259",
+            "sku": "itaque",
+            "customer_id": "1990962",
+            "customer_email": "elouise.pagac@heidenreich.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "cum",
-            "customer_id": "607",
+            "sku": "veritatis",
+            "customer_id": "12016",
+            "customer_email": "cartwright.ana@armstrong.org",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "animi",
-            "customer_id": "593",
+            "sku": "officia",
+            "customer_id": "6509",
+            "customer_email": "mmiller@stanton.biz",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "pariatur",
-            "customer_id": "545",
+            "sku": "reprehenderit",
+            "customer_id": "31653520",
+            "customer_email": "ashlee.howell@hotmail.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "quae",
-            "customer_id": "671",
+            "sku": "odio",
+            "customer_id": "75",
+            "customer_email": "joseph.ruecker@hotmail.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "rerum",
-            "customer_id": "172",
+            "sku": "ratione",
+            "customer_id": "7",
+            "customer_email": "hintz.florian@gmail.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "eius",
-            "customer_id": "943",
+            "sku": "eveniet",
+            "customer_id": "19221",
+            "customer_email": "amina.metz@hotmail.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "rerum",
-            "customer_id": "807",
+            "sku": "perferendis",
+            "customer_id": "397164",
+            "customer_email": "jordy19@hotmail.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "sint",
-            "customer_id": "207",
+            "sku": "aut",
+            "customer_id": "1",
+            "customer_email": "sfay@jast.info",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "et",
-            "customer_id": "904",
+            "sku": "fuga",
+            "customer_id": "6",
+            "customer_email": "jerry16@pfeffer.net",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -793,94 +679,104 @@ GET {{HOST}}/dropped/items?limit=10</code>
                                                 <pre class="click-to-expand-wrapper is-snippet-wrapper is-expandable" data-title="Limit">
                                                     <code class="is-highlighted">
 {
-    "total_count": 200012,
+    "total_count": 200032,
     "items": [
         {
-            "sku": "fugit",
-            "customer_id": "812",
+            "sku": "fugiat",
+            "customer_id": "1281606",
+            "customer_email": "brianne.bashirian@bogisich.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "architecto",
-            "customer_id": "259",
+            "sku": "itaque",
+            "customer_id": "1990962",
+            "customer_email": "elouise.pagac@heidenreich.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "cum",
-            "customer_id": "607",
+            "sku": "veritatis",
+            "customer_id": "12016",
+            "customer_email": "cartwright.ana@armstrong.org",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "animi",
-            "customer_id": "593",
+            "sku": "officia",
+            "customer_id": "6509",
+            "customer_email": "mmiller@stanton.biz",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "pariatur",
-            "customer_id": "545",
+            "sku": "reprehenderit",
+            "customer_id": "31653520",
+            "customer_email": "ashlee.howell@hotmail.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "quae",
-            "customer_id": "671",
+            "sku": "odio",
+            "customer_id": "75",
+            "customer_email": "joseph.ruecker@hotmail.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "rerum",
-            "customer_id": "172",
+            "sku": "ratione",
+            "customer_id": "7",
+            "customer_email": "hintz.florian@gmail.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "eius",
-            "customer_id": "943",
+            "sku": "eveniet",
+            "customer_id": "19221",
+            "customer_email": "amina.metz@hotmail.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "rerum",
-            "customer_id": "807",
+            "sku": "perferendis",
+            "customer_id": "397164",
+            "customer_email": "jordy19@hotmail.com",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
         },
         {
-            "sku": "sint",
-            "customer_id": "207",
+            "sku": "aut",
+            "customer_id": "1",
+            "customer_email": "sfay@jast.info",
             "created_at": {
-                "date": "2024-02-26 00:00:00.000000",
+                "date": "2024-03-03 00:00:00.000000",
                 "timezone_type": 3,
                 "timezone": "UTC"
             }
@@ -941,7 +837,7 @@ GET {{HOST}}/dropped/items?limit=10</code>
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Filter By Sku">
                                                 <code class="is-highlighted">
-GET http://localhost:8041/dropped/items/byproduct?filters=[{"field": "sku","operator": ">","value": "0001"}]</code>
+GET {{HOST}}/dropped/items/byproduct?filters=[{"field": "sku","operator": ">","value": "0001"}]</code>
                                             </pre>
                                         </div>
                                     </div>
@@ -3422,7 +3318,7 @@ GET {{HOST}}/dropped/items/byproduct?order_by=total&order=desc</code>
                                         <div>
                                             <pre class="click-to-expand-wrapper is-snippet-wrapper " data-title="Order By">
                                                 <code class="is-highlighted">
-GET http://localhost:8041/dropped/items/bycustomer?order_by=total&order=desc&limit=11</code>
+GET {{HOST}}/dropped/items/bycustomer?order_by=total&order=desc&limit=11</code>
                                             </pre>
                                         </div>
                                     </div>

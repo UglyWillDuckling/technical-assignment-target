@@ -8,7 +8,6 @@ use Acme\TargetAdds\Tracking\Domain\CartRemoval;
 use Acme\TargetAdds\Tracking\Domain\CartRemovalRepository;
 use Acme\Shared\Domain\Criteria\Criteria;
 use Acme\Shared\Domain\Criteria\Filters;
-use Acme\Shared\Domain\Criteria\FilterOperator;
 use Acme\Shared\Domain\Criteria\Order;
 
 use Acme\Shared\Infrastructure\Persistence\Doctrine\DoctrineCriteriaConverter;
@@ -36,7 +35,7 @@ final class MysqlCartRemovalRepository extends DoctrineRepository implements Car
 	public function byCartId(string $cartId): array
 	{
 		$filters =  Filters::fromValues([[
-						'field' => 'cart_id',
+                'field' => 'cart_id',
 		       	'operator' => '=',
 		       	'value' =>  $cartId
 		]]);

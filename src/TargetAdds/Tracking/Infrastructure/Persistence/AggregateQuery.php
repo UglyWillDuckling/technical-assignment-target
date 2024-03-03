@@ -19,7 +19,7 @@ abstract class AggregateQuery
 
     abstract protected function aggregateFields(): array;
 
-    public function matching(Criteria $criteria)
+    public function matching(Criteria $criteria): Collection
     {
         $qb = $this->queryBuilder();
 

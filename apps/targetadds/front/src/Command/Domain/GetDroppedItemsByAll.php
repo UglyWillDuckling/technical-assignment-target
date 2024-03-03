@@ -46,8 +46,6 @@ final class GetDroppedItemsByAll extends Command
         $output->writeln("<question>Start</question>");
         $output->writeln("");
         $output->writeln("<comment>Matching</comment>");
-        // $output->writeln("count: ".$matching->count());
-        // $output->writeln("total: ".$matching->countTotal());
         $output->writeln("count: ".$byCustomer->count());
         $output->writeln("total: ".$byCustomer->countTotal());
 

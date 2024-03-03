@@ -12,6 +12,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 use Acme\Commerce\Cart\Domain\CartItemRemovedEvent;
 use Acme\Commerce\Cart\Domain\CheckoutEvent;
+use Faker\Factory;
 
 #[AsCommand(name: 'acme:domain-events:mysql:test-publish', description: 'Create a Test domain Event',)]
 final class PublishMySqlEventTest extends Command
@@ -22,17 +23,22 @@ final class PublishMySqlEventTest extends Command
 
   protected function execute(InputInterface $input, OutputInterface $output): int
   {
+      $faker = Factory::create();
+
       $cartId = '1';
       $skuRemoved = '0001';
+      $customer_email = $faker->email();
 
       $this->eventBus->publish(new CartItemRemovedEvent(
           item_id: '1',
           cart_id: $cartId,
           sku: $skuRemoved
       ));
+
       $this->eventBus->publish(new CheckoutEvent(
           cart_id: $cartId,
           customer_id: '1',
+          customer_email: $customer_email,
           productSkus: [$skuRemoved, '0099', '00044']
       ));
 
@@ -48,10 +54,9 @@ final class PublishMySqlEventTest extends Command
       $this->eventBus->publish(new CheckoutEvent(
           cart_id: $newCartId,
           customer_id: '1',
+          customer_email: $customer_email,
           productSkus: ['0099', '00044']
       ));
-
-      // After this is consumed we should have a single DroppedItem -> sku = '0005', cart_id = '2'
 
       return 0;
   }

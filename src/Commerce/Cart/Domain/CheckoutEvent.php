@@ -11,6 +11,7 @@ final class CheckoutEvent extends DomainEvent
   public function __construct(
     public readonly string $cart_id,
     public readonly string $customer_id,
+    public readonly string $customer_email,
     public readonly array $productSkus,
     string $eventId = null,
     string $occurredOn = null
@@ -32,6 +33,7 @@ final class CheckoutEvent extends DomainEvent
     return new self(
       (string)$body['cart_id'],
       (string)$body['customer_id'],
+      (string)$body['customer_email'],
       $body['productSkus'],
       $eventId,
       $occurredOn
@@ -43,6 +45,7 @@ final class CheckoutEvent extends DomainEvent
     return [
       'cart_id' => $this->cart_id,
       'customer_id' => $this->customer_id,
+      'customer_email' => $this->customer_email,
       'productSkus' => $this->productSkus,
     ];
   }

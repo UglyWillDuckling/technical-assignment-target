@@ -7,10 +7,12 @@
   <entity name="Acme\TargetAdds\Tracking\Domain\DroppedItem" table="targetadds_dropped_items">
     <id name="id" type="string" column="id" length="36" />
     <field name="customer_id" type="string" column="customer_id" length="36" />
+    <field name="customer_email" type="string" column="customer_email" length="255" />
     <field name="sku" type="string" column="sku" length="255" />
     <field name="created_at" type="date" column="created_at" />
       <indexes>
           <index name="sku" columns="sku"/>
+          <index name="customer_email" columns="customer_email"/>
           <index name="sku-customer_id" columns="sku,customer_id"/>
           <index name="created_at" columns="created_at"/>
       </indexes>

@@ -21,6 +21,7 @@ readonly class DroppedItemsGetController extends DroppedItemsController
         return fn(DroppedItem $droppedItem): array => [
             'sku' => $droppedItem->sku,
             'customer_id' => $droppedItem->customer_id,
+            'customer_email' => $droppedItem->customer_email,
             'created_at' => $droppedItem->created_at,
         ];
     }

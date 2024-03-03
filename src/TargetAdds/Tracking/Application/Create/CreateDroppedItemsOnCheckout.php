@@ -32,6 +32,7 @@ final readonly class CreateDroppedItemsOnCheckout implements DomainEventSubscrib
     {
         $droppedRepository = $this->droppedItemRepository;
         $customerId = $event->customer_id;
+        $customer_email = $event->customer_email;
         $productSkus = $event->productSkus;
 
         $removedItems = $this->removalRepo->byCartId($event->cart_id);
@@ -43,7 +44,7 @@ final readonly class CreateDroppedItemsOnCheckout implements DomainEventSubscrib
 
         $droppedItems = map(
             fn (CartRemoval $cartRemoval)
-                => new DroppedItem(Uuid::uuid4()->toString(), $customerId, $cartRemoval->sku),
+                => new DroppedItem(Uuid::uuid4()->toString(), $customerId, $customer_email, $cartRemoval->sku),
             $removedItems
         );
 

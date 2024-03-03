@@ -29,15 +29,15 @@ final class CreateDummyDroppedItems extends Command
 
         $items = [];
         for ($i = 0; $i <= $howMuch; $i++) {
-            $customer_id = (string)random_int(1, 1000);
-            $sku = $faker->word();
-            $id = Uuid::uuid4()->toString();
-
-            $items[] = new DroppedItem($id, $customer_id, $sku);
+            $items[] = new DroppedItem(
+                id: Uuid::uuid4()->toString(),
+                customer_id: (string)$faker->randomNumber(),
+                customer_email: $faker->email(),
+                sku: $faker->word()
+            );
         }
-        $coll = new DroppedItemsCollection($items, 1);
 
-        $this->droppedItemRepository->saveCollection($coll);
+        $this->droppedItemRepository->saveCollection(new DroppedItemsCollection($items, 1));
 
         return Command::SUCCESS;
     }

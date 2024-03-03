@@ -33,20 +33,11 @@ final class GetDroppedItems extends Command
       $criteria = (new Criteria($filters, Order::none(),null,1));
 
       $all = $this->droppedItemRepository->searchAll();
-      $byProducts = $this->droppedItemRepository->byProduct($criteria);
-      $byCustomers = $this->droppedItemRepository->byCustomer($criteria);
-
       $collection = $this->droppedItemRepository->matching($criteria);
 
       $output->writeln("<info>Start</info>");
       $output->writeln((string)$collection->count());
       $output->writeln((string)$collection->countTotal());
-
-      $output->writeln((string)$byProducts->count());
-      $output->writeln((string)$byProducts->countTotal());
-
-      $output->writeln((string)$byCustomers->count());
-      $output->writeln((string)$byCustomers->countTotal());
 
       $output->writeln("<info>End</info>");
       return 0;

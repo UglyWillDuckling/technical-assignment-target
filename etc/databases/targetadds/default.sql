@@ -27,6 +27,7 @@ CREATE TABLE targetadds_cart_removal (
 CREATE TABLE targetadds_dropped_items (
   id CHAR(36) NOT NULL,
   customer_id CHAR(36) NOT NULL,
+  customer_email VARCHAR(255) NOT NULL,
   sku VARCHAR(255) NOT NULL,
   created_at DATE NOT NULL,
   PRIMARY KEY (id)
@@ -34,6 +35,8 @@ CREATE TABLE targetadds_dropped_items (
 DEFAULT CHARSET = utf8mb4
 COLLATE = utf8mb4_unicode_ci;
 
+CREATE INDEX `targetadds_dropped_items__sku-customer_email`
+ON targetadds_dropped_items (customer_email);
 CREATE INDEX `targetadds_dropped_items__sku-customer_id`
 ON targetadds_dropped_items (sku, customer_id)
 COMMENT 'sku and customer_id index';

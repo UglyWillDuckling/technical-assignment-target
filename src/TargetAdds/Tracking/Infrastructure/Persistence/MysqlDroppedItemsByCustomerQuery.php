@@ -29,15 +29,18 @@ class MysqlDroppedItemsByCustomerQuery extends AggregateQuery implements Dropped
         return parent::matching($criteria);
     }
 
-    protected function alias(): string {
+    protected function alias(): string
+    {
         return 'd';
     }
 
-    #[Override] protected function select(): string {
+    #[Override] protected function select(): string
+    {
         return 'd.sku, d.customer_id, COUNT(d.sku) as total';
     }
 
-    #[Override] protected function groupBy(): string {
+    #[Override] protected function groupBy(): string
+    {
         return 'd.sku, d.customer_id';
     }
 
@@ -46,13 +49,15 @@ class MysqlDroppedItemsByCustomerQuery extends AggregateQuery implements Dropped
         $items = $query->getResult();
 
         return new DroppedItemsByCustomerCollection(
-            map(fn (array $row) => new DroppedItemsByCustomer(
+            map(
+                fn (array $row) => new DroppedItemsByCustomer(
                     (string)$row['sku'],
                     (string)$row['customer_id'],
-                    (int)$row['total']),
-                $items),
+                    (int)$row['total']
+                ),
+                $items
+            ),
             (new Paginator($query))->count()
         );
     }
 }
-

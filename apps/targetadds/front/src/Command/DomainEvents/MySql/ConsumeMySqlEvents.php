@@ -16,41 +16,41 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 use function Lambdish\Phunctional\pipe;
 
-#[AsCommand(name: 'acme:domain-events:mysql:consume', description: 'Consume domain events from MySql',)]
+#[AsCommand(name: 'acme:domain-events:mysql:consume', description: 'Consume domain events from MySql', )]
 final class ConsumeMySqlEvents extends Command
 {
-  public function __construct(
-    private readonly DoctrineDomainEventsConsumer $consumer,
-    private readonly DatabaseConnections $connections,
-    private readonly DomainEventSubscriberLocator $subscriberLocator
-  ) {
-    parent::__construct();
-  }
+    public function __construct(
+        private readonly DoctrineDomainEventsConsumer $consumer,
+        private readonly DatabaseConnections $connections,
+        private readonly DomainEventSubscriberLocator $subscriberLocator
+    ) {
+        parent::__construct();
+    }
 
-  protected function configure(): void
-  {
-    $this->addArgument('quantity', InputArgument::REQUIRED, 'Quantity of events to process');
-  }
+    protected function configure(): void
+    {
+        $this->addArgument('quantity', InputArgument::REQUIRED, 'Quantity of events to process');
+    }
 
-  protected function execute(InputInterface $input, OutputInterface $output): int
-  {
-    $quantityEventsToProcess = (int) $input->getArgument('quantity');
+    protected function execute(InputInterface $input, OutputInterface $output): int
+    {
+        $quantityEventsToProcess = (int) $input->getArgument('quantity');
 
-    $consumer = pipe($this->consumer(), fn () => $this->connections->clear());
+        $consumer = pipe($this->consumer(), fn () => $this->connections->clear());
 
-    $this->consumer->consume($consumer, $quantityEventsToProcess);
+        $this->consumer->consume($consumer, $quantityEventsToProcess);
 
-    return 0;
-  }
+        return 0;
+    }
 
-  private function consumer(): callable
-  {
-    return function (DomainEvent $domainEvent): void {
-      $subscribers = $this->subscriberLocator->allSubscribedTo($domainEvent::class);
+    private function consumer(): callable
+    {
+        return function (DomainEvent $domainEvent): void {
+            $subscribers = $this->subscriberLocator->allSubscribedTo($domainEvent::class);
 
-      foreach ($subscribers as $subscriber) {
-        $subscriber($domainEvent);
-      }
-    };
-  }
+            foreach ($subscribers as $subscriber) {
+                $subscriber($domainEvent);
+            }
+        };
+    }
 }

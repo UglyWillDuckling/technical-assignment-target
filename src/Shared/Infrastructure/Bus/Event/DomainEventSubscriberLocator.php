@@ -14,22 +14,22 @@ use function Lambdish\Phunctional\search;
 
 final class DomainEventSubscriberLocator
 {
-	private readonly array $mapping;
+    private readonly array $mapping;
 
-	public function __construct(Traversable $mapping)
-	{
-		$this->mapping = iterator_to_array($mapping);
-	}
+    public function __construct(Traversable $mapping)
+    {
+        $this->mapping = iterator_to_array($mapping);
+    }
 
-	public function allSubscribedTo(string $eventClass): array
-	{
-		$formatted = CallableFirstParameterExtractor::forPipedCallables($this->mapping);
+    public function allSubscribedTo(string $eventClass): array
+    {
+        $formatted = CallableFirstParameterExtractor::forPipedCallables($this->mapping);
 
-		return $formatted[$eventClass];
-	}
+        return $formatted[$eventClass];
+    }
 
-	public function all(): array
-	{
-		return $this->mapping;
-	}
+    public function all(): array
+    {
+        return $this->mapping;
+    }
 }

@@ -2,11 +2,11 @@
 
 namespace Acme\Apps\TargetAdds\Front\EventListener;
 
-use Symfony\Component\HttpKernel\Event\ExceptionEvent;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Acme\TargetAdds\Tracking\Domain\DroppedItemNotFound;
-
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
+
+use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 
 class ExceptionListener
 {
@@ -30,4 +30,3 @@ class ExceptionListener
         $event->setResponse(new JsonResponse($responseData, $code));
     }
 }
-

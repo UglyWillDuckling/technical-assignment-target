@@ -8,15 +8,16 @@ use Symfony\Component\HttpFoundation\Request;
 
 readonly class ItemGetController
 {
-    public function __construct(private DroppedItemRepository $droppedItemRepository){}
+    public function __construct(private DroppedItemRepository $droppedItemRepository)
+    {
+    }
 
     public function __invoke(Request $request): JsonResponse
     {
-        $id = (string)$request->GET( 'id' );
+        $id = (string)$request->GET('id');
 
         $item = $this->droppedItemRepository->search($id);
 
         return new JsonResponse(['item' => $item], 200, ['Access-Control-Allow-Origin' => '*']);
     }
 }
-

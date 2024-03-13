@@ -6,7 +6,8 @@ namespace Acme\TargetAdds\Tracking\Domain\DroppedItem;
 
 use Acme\Shared\Domain\Collection;
 
-class DroppedItemsByProductCollection extends Collection {
+class DroppedItemsByProductCollection extends Collection
+{
     public function __construct(array $items, private readonly int $total_count)
     {
         parent::__construct($items);

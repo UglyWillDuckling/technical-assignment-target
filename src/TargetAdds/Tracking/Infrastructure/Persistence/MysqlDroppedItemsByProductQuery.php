@@ -27,16 +27,19 @@ class MysqlDroppedItemsByProductQuery extends AggregateQuery implements DroppedI
         return parent::matching($criteria);
     }
 
-    #[Override] protected function alias(): string {
+    #[Override] protected function alias(): string
+    {
         return 'd';
     }
 
-    #[Override] protected function select(): string {
-        return $this->alias().'.sku, COUNT('.$this->alias().'.sku) as total';
+    #[Override] protected function select(): string
+    {
+        return $this->alias() . '.sku, COUNT(' . $this->alias() . '.sku) as total';
     }
 
-    #[Override] protected function groupBy(): string {
-        return $this->alias().'.sku';
+    #[Override] protected function groupBy(): string
+    {
+        return $this->alias() . '.sku';
     }
 
     protected function createResultCollection(Query $query): DroppedItemsByProductCollection
@@ -50,4 +53,3 @@ class MysqlDroppedItemsByProductQuery extends AggregateQuery implements DroppedI
         );
     }
 }
-

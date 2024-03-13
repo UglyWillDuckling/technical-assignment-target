@@ -6,22 +6,23 @@ namespace Acme\TargetAdds\Tracking\Application\Create;
 
 use Acme\Commerce\Cart\Domain\CheckoutEvent;
 use Acme\Shared\Domain\Bus\Event\DomainEventSubscriber;
-use Acme\TargetAdds\Tracking\Domain\CartRemovalRepository;
 use Acme\TargetAdds\Tracking\Domain\CartRemoval;
-use Acme\TargetAdds\Tracking\Domain\DroppedItemRepository;
+use Acme\TargetAdds\Tracking\Domain\CartRemovalRepository;
 use Acme\TargetAdds\Tracking\Domain\DroppedItem;
+use Acme\TargetAdds\Tracking\Domain\DroppedItemRepository;
 use Ramsey\Uuid\Uuid;
 
-use function Lambdish\Phunctional\map;
-use function Lambdish\Phunctional\filter;
 use function Lambdish\Phunctional\each;
+use function Lambdish\Phunctional\filter;
+use function Lambdish\Phunctional\map;
 
 final readonly class CreateDroppedItemsOnCheckout implements DomainEventSubscriber
 {
     public function __construct(
         private DroppedItemRepository $droppedItemRepository,
-        private CartRemovalRepository $removalRepo)
-    {}
+        private CartRemovalRepository $removalRepo
+    ) {
+    }
 
     public static function subscribedTo(): array
     {
@@ -38,7 +39,7 @@ final readonly class CreateDroppedItemsOnCheckout implements DomainEventSubscrib
         $removedItems = $this->removalRepo->byCartId($event->cart_id);
 
         $removedItems = filter(
-            fn(CartRemoval $cartRemoval) => !in_array($cartRemoval->sku, $productSkus, true),
+            fn (CartRemoval $cartRemoval) => !in_array($cartRemoval->sku, $productSkus, true),
             $removedItems
         );
 
@@ -51,4 +52,3 @@ final readonly class CreateDroppedItemsOnCheckout implements DomainEventSubscrib
         each(fn (DroppedItem $droppedItem) => $droppedRepository->save($droppedItem), $droppedItems);
     }
 }
-

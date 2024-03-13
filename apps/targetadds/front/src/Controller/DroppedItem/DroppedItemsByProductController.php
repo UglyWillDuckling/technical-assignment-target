@@ -9,7 +9,9 @@ use Acme\TargetAdds\Tracking\Domain\DroppedItem\DroppedItemsByProductQuery;
 
 readonly class DroppedItemsByProductController extends DroppedItemsController
 {
-    public function __construct(private DroppedItemsByProductQuery $byProductQuery){}
+    public function __construct(private DroppedItemsByProductQuery $byProductQuery)
+    {
+    }
 
     protected function getItems(Criteria $criteria): DroppedItemsByProductCollection
     {
@@ -18,7 +20,7 @@ readonly class DroppedItemsByProductController extends DroppedItemsController
 
     protected function itemsMapping(): callable
     {
-        return fn(DroppedItemsByProduct $droppedItem): array => [
+        return fn (DroppedItemsByProduct $droppedItem): array => [
             'sku' => $droppedItem->sku,
             'total' => $droppedItem->total,
         ];

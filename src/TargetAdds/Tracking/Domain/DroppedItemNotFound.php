@@ -6,8 +6,10 @@ namespace Acme\TargetAdds\Tracking\Domain;
 
 use DomainException;
 
-final class DroppedItemNotFound extends DomainException {
-    public function __construct(private readonly string $id) {
+final class DroppedItemNotFound extends DomainException
+{
+    public function __construct(private readonly string $id)
+    {
         parent::__construct($this->errorMessage());
     }
 

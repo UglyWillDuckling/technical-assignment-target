@@ -6,4 +6,6 @@ namespace Acme\Shared\Domain\Criteria;
 
 use Acme\Shared\Domain\ValueObject\StringValueObject;
 
-final class OrderBy extends StringValueObject {}
+final class OrderBy extends StringValueObject
+{
+}

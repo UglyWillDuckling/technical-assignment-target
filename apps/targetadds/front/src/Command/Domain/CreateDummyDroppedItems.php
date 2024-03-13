@@ -1,20 +1,22 @@
-<?php /** @noinspection ALL */
+<?php
+
+/** @noinspection ALL */
 
 declare(strict_types=1);
 
 namespace Acme\Apps\TargetAdds\Front\Command\Domain;
 
 use Acme\TargetAdds\Tracking\Domain\DroppedItem;
+use Acme\TargetAdds\Tracking\Domain\DroppedItemRepository;
 use Acme\TargetAdds\Tracking\Domain\DroppedItemsCollection;
+use Faker\Factory;
 use Ramsey\Uuid\Uuid;
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Acme\TargetAdds\Tracking\Domain\DroppedItemRepository;
-use Faker\Factory;
 
-#[AsCommand(name: 'acme:domain-dummy-create_dropped_items', description: 'Create Dummy Dropped Items',)]
+#[AsCommand(name: 'acme:domain-dummy-create_dropped_items', description: 'Create Dummy Dropped Items', )]
 final class CreateDummyDroppedItems extends Command
 {
     public function __construct(private readonly DroppedItemRepository $droppedItemRepository)

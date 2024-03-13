@@ -10,4 +10,3 @@ interface DroppedItemsByProductQuery
 {
     public function matching(Criteria $criteria): DroppedItemsByProductCollection;
 }
-

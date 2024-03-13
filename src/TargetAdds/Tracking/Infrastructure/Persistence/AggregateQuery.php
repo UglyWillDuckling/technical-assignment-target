@@ -15,7 +15,9 @@ use Doctrine\ORM\QueryBuilder;
 
 abstract class AggregateQuery
 {
-    public function __construct(private readonly EntityManager $entityManager) {}
+    public function __construct(private readonly EntityManager $entityManager)
+    {
+    }
 
     abstract protected function aggregateFields(): array;
 
@@ -61,7 +63,7 @@ abstract class AggregateQuery
         $filters = [];
         $aggregateFilters = [];
         foreach ($criteria->plainFilters() as $filter) {
-            if(in_array($filter->field()->value(), $this->aggregateFields(), true)) {
+            if (in_array($filter->field()->value(), $this->aggregateFields(), true)) {
                 $aggregateFilters[] = $filter;
                 continue;
             }

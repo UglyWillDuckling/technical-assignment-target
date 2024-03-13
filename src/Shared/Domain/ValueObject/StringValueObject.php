@@ -6,14 +6,16 @@ namespace Acme\Shared\Domain\ValueObject;
 
 abstract class StringValueObject
 {
-	public function __construct(protected string $value) {}
+    public function __construct(protected string $value)
+    {
+    }
 
-	final public function value(): string
-	{
-		return $this->value;
-	}
+    final public function value(): string
+    {
+        return $this->value;
+    }
 
-    public  function __toString(): string
+    public function __toString(): string
     {
         return $this->value();
     }

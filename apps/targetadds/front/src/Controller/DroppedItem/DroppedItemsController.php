@@ -11,13 +11,14 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use function Lambdish\Phunctional\map;
 
-readonly abstract class DroppedItemsController
+abstract readonly class DroppedItemsController
 {
     public function __invoke(Request $request): JsonResponse
     {
         $items = $this->getItems($this->createCriteria($request));
 
-        return new JsonResponse([
+        return new JsonResponse(
+            [
                 'total_count' => $items->countTotal(),
                 'items' => map($this->itemsMapping(), $items)
             ],
@@ -40,7 +41,9 @@ readonly abstract class DroppedItemsController
         $filters = Filters::fromValues($filters);
         $order = Order::fromValues((string)$request->query->get('order_by'), $request->query->get('order'));
 
-        return (new Criteria($filters, $order,
+        return (new Criteria(
+            $filters,
+            $order,
             $offset === null ? null : (int)$offset,
             $limit === null ? null : (int)$limit
         ));

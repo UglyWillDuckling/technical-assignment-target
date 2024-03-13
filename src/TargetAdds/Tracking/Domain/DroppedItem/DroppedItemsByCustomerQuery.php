@@ -10,4 +10,3 @@ interface DroppedItemsByCustomerQuery
 {
     public function matching(Criteria $criteria): DroppedItemsByCustomerCollection;
 }
-

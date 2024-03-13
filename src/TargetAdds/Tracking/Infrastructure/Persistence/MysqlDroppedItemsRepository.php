@@ -4,15 +4,15 @@ declare(strict_types=1);
 
 namespace Acme\TargetAdds\Tracking\Infrastructure\Persistence;
 
-use DateTime;
-
 use Acme\Shared\Domain\Criteria\Criteria;
+
 use Acme\Shared\Infrastructure\Persistence\Doctrine\DoctrineCriteriaConverter;
 use Acme\Shared\Infrastructure\Persistence\Doctrine\DoctrineRepository;
 use Acme\TargetAdds\Tracking\Domain\DroppedItem;
+use Acme\TargetAdds\Tracking\Domain\DroppedItemNotFound;
 use Acme\TargetAdds\Tracking\Domain\DroppedItemRepository;
 use Acme\TargetAdds\Tracking\Domain\DroppedItemsCollection;
-use Acme\TargetAdds\Tracking\Domain\DroppedItemNotFound;
+use DateTime;
 use Doctrine\Common\Collections\Criteria as DoctrineCriteria;
 
 final class MysqlDroppedItemsRepository extends DoctrineRepository implements DroppedItemRepository
@@ -30,10 +30,11 @@ final class MysqlDroppedItemsRepository extends DoctrineRepository implements Dr
     /**
      * @throws DroppedItemNotFound
      */
-    public function search(string $id): DroppedItem {
+    public function search(string $id): DroppedItem
+    {
         $item = $this->repository(DroppedItem::class)->find($id);
 
-        if ($item === NULL) {
+        if ($item === null) {
             throw new DroppedItemNotFound($id);
         }
 
@@ -45,7 +46,7 @@ final class MysqlDroppedItemsRepository extends DoctrineRepository implements Dr
         $count = $this->countTotal(['id'], Criteria::empty());
         $items = $this->repository(DroppedItem::class)->findAll();
 
-        return  new DroppedItemsCollection($items, $count);
+        return new DroppedItemsCollection($items, $count);
     }
 
     public function matching(Criteria $criteria): DroppedItemsCollection
@@ -60,8 +61,11 @@ final class MysqlDroppedItemsRepository extends DoctrineRepository implements Dr
 
     private function toDoctrineCriteria(Criteria $criteria): DoctrineCriteria
     {
-        return DoctrineCriteriaConverter::convert($criteria, [], [
-            'created_at' => fn(string $value) => new DateTime($value)]
+        return DoctrineCriteriaConverter::convert(
+            $criteria,
+            [],
+            [
+            'created_at' => fn (string $value) => new DateTime($value)]
         );
     }
 
@@ -70,7 +74,7 @@ final class MysqlDroppedItemsRepository extends DoctrineRepository implements Dr
         $alias = 'd';
 
         if (count($columns) > 1) {
-            $columnsSelect = implode(',', map(fn(string $column)  => "$alias.$column", $columns));
+            $columnsSelect = implode(',', map(fn (string $column) => "$alias.$column", $columns));
             $select = "COUNT(DISTINCT CONCAT($columnsSelect))";
         } else {
             $select = "COUNT(DISTINCT $alias.$columns[0])";
@@ -90,4 +94,3 @@ final class MysqlDroppedItemsRepository extends DoctrineRepository implements Dr
             ->select($select);
     }
 }
-

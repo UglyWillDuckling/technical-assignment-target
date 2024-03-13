@@ -8,11 +8,11 @@ use Acme\Shared\Domain\Criteria\Criteria;
 
 interface CartRemovalRepository
 {
-  public function save(CartRemoval $course): void;
+    public function save(CartRemoval $course): void;
 
-  public function searchAll(): array;
+    public function searchAll(): array;
 
-  public function matching(Criteria $criteria): array;
+    public function matching(Criteria $criteria): array;
 
-  public  function byCartId(string $cartId): array;
+    public function byCartId(string $cartId): array;
 }

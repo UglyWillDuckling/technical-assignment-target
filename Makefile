@@ -18,7 +18,7 @@ lint:
 
 start:
 	@if [ ! -f .env.local ]; then echo '' > .env.local; fi
-	docker compose up --build -d
+		UID=${shell id -u} GID=${shell id -g} docker compose up --build -d
 	make clean-cache
 
 stop:
@@ -28,7 +28,7 @@ destroy:
 	docker compose down
 
 rebuild:
-	docker compose build --pull --force-rm --no-cache
+	UID=${shell id -u} GID=${shell id -g} docker compose build --pull --force-rm --no-cache
 	make composer-install
 	make start
 
